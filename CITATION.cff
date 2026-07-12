@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+title: Raven One SimuLink
+message: If you use this software, please cite it using the metadata below.
+type: software
+abstract: >-
+  An educational C# WinForms desktop application that simulates the RSA
+  public-key cryptosystem and the MD5 message-digest algorithm, exposing
+  every intermediate computation for step-by-step analysis. Developed as
+  the practical component of the Bachelor thesis "Password- / Keyless
+  authentication" at TH Köln (Cologne University of Applied Sciences).
+authors:
+  - given-names: Mert
+    family-names: Torun
+    email: info@mtorun0x7cd.com
+    affiliation: TH Köln
+version: 1.0.0
+date-released: 2021-06-30
+license: MIT
+repository-code: https://github.com/mtorun0x7cd/raven-one-simulink
+url: https://github.com/mtorun0x7cd/raven-one-simulink
+keywords:
+  - cryptography
+  - rsa
+  - md5
+  - csharp
+  - dotnet
+  - winforms
+  - security-education
+  - cryptographic-simulator
+  - academic-project
+references:
+  - type: thesis
+    title: "Password- / Keyless authentication"
+    authors:
+      - given-names: Mert
+        family-names: Torun
+    institution:
+      name: "TH Köln (Cologne University of Applied Sciences)"
+    year: 2021
+    thesis-type: "Bachelor thesis"

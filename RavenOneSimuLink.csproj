@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>disable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <!-- Enable building Windows Forms on non-Windows platforms like macOS -->
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <AssemblyTitle>Raven One SimuLink</AssemblyTitle>
+    <Product>Raven One SimuLink</Product>
+    <Description>Educational RSA and MD5 cryptographic simulator that exposes every intermediate computation for step-by-step algorithmic analysis.</Description>
+    <Authors>Mert Torun</Authors>
+    <Company>mtorun0x7cd</Company>
+    <Copyright>Copyright (c) 2021-2026 Mert Torun</Copyright>
+    <Version>1.0.0</Version>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/mtorun0x7cd/raven-one-simulink</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/mtorun0x7cd/raven-one-simulink</PackageProjectUrl>
+  </PropertyGroup>
+
+</Project>
