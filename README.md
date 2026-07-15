@@ -66,7 +66,7 @@ The source preserved here is the listing from the thesis appendix: the two crypt
 ### MD5 Cryptographic Dataflow Diagram
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#E8F5E9', 'edgeColor': '#4CAF50', 'primaryBorderColor': '#2E7D32', 'lineColor': '#4CAF50', 'textColor': '#1B5E20' }}}%%
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#EFF6FF', 'edgeColor': '#2563EB', 'primaryBorderColor': '#2563EB', 'lineColor': '#2563EB', 'textColor': '#0F172A' }}}%%
 graph TD
     Input[Input Message] --> Padding[Padding Stage: Append 1 bit, Pad with 0s, Append Length: 32-bit value in the 64-bit field]
     Padding --> Blocks[512-bit Blocks]
@@ -123,7 +123,7 @@ graph TD
 ### MD5 Round Structure (Merkle–Damgård)
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#E8F5E9', 'edgeColor': '#4CAF50', 'primaryBorderColor': '#2E7D32', 'lineColor': '#4CAF50', 'textColor': '#1B5E20' }}}%%
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#EFF6FF', 'edgeColor': '#2563EB', 'primaryBorderColor': '#2563EB', 'lineColor': '#2563EB', 'textColor': '#0F172A' }}}%%
 graph TD
     In["Input → pad to 512-bit blocks"] --> Init["For each block: init A, B, C, D<br/>from the chaining state"]
     Init --> F["Rounds 0–15 · F = (B∧C) ∨ (¬B∧D)"]
