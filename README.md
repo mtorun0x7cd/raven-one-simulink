@@ -215,7 +215,7 @@ This is an archived, educational project and is not actively maintained. Its cry
 
 This project is licensed under the [MIT License](LICENSE). It was originally released under GPL-3.0-or-later as the 2021 B.Sc. thesis submission and has since been relicensed to MIT by the author, the sole copyright holder; see [`NOTICE`](NOTICE). The MIT License governs.
 
-## Author
+## Contact
 
 **Mert Torun, M.Sc.** — IT Security Architect · Systems Engineer  
 mtorun0x7cd · Research & Development
