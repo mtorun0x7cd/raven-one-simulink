@@ -33,7 +33,7 @@ A digest-validation workflow compares two MD5 digests side by side, illustrating
 
 | Dimension | Detail |
 | :--- | :--- |
-| **Institution** | TH Köln (Cologne University of Applied Sciences) — Institut für Nachrichtentechnik (INT) |
+| **Institution** | TH Köln (University of Applied Sciences) — Institut für Nachrichtentechnik (INT) |
 | **Program** | Computer Science & Engineering (Technische Informatik), B.Sc. |
 | **Thesis** | *Password- / Keyless authentication* (June 2021) — Raven One SimuLink is its practical cryptographic component (Chapter 5; source in the appendix), thesis graded *sehr gut* (excellent) |
 | **First reviewer** | Prof. Dr. Michael Silverberg (TH Köln) |

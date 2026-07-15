@@ -8,7 +8,7 @@ abstract: >-
   every RSA intermediate step by step and computing MD5 digests with a
   from-scratch 64-round engine. Developed as the practical component of
   the Bachelor thesis "Password- / Keyless authentication" at TH Köln
-  (Cologne University of Applied Sciences).
+  (University of Applied Sciences).
 authors:
   - given-names: Mert
     family-names: Torun
@@ -36,6 +36,6 @@ references:
       - given-names: Mert
         family-names: Torun
     institution:
-      name: "TH Köln (Cologne University of Applied Sciences)"
+      name: "TH Köln (University of Applied Sciences)"
     year: 2021
     thesis-type: "Bachelor thesis"
