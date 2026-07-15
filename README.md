@@ -15,7 +15,7 @@
 ![.NET 8](https://img.shields.io/badge/.NET%208-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
 ![WinForms](https://img.shields.io/badge/WinForms-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 ![Cryptography](https://img.shields.io/badge/Cryptography-FF6F00?style=for-the-badge&logo=letsencrypt&logoColor=white)
-![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
 
 > **Archived.** A frozen record of completed work, preserved for reference and not actively maintained. See [`SECURITY.md`](SECURITY.md) for scope and disclosures.
 
