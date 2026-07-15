@@ -4,10 +4,11 @@ message: If you use this software, please cite it using the metadata below.
 type: software
 abstract: >-
   An educational C# WinForms desktop application that simulates the RSA
-  public-key cryptosystem and the MD5 message-digest algorithm, exposing
-  every intermediate computation for step-by-step analysis. Developed as
-  the practical component of the Bachelor thesis "Password- / Keyless
-  authentication" at TH Köln (Cologne University of Applied Sciences).
+  public-key cryptosystem and the MD5 message-digest algorithm, tracing
+  every RSA intermediate step by step and computing MD5 digests with a
+  from-scratch 64-round engine. Developed as the practical component of
+  the Bachelor thesis "Password- / Keyless authentication" at TH Köln
+  (Cologne University of Applied Sciences).
 authors:
   - given-names: Mert
     family-names: Torun

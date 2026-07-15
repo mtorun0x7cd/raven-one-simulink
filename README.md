@@ -8,7 +8,7 @@
 
 # Raven One SimuLink
 
-> Educational RSA and MD5 cryptographic simulator that exposes every intermediate computation for step-by-step algorithmic analysis.
+> Educational RSA and MD5 cryptographic simulator that traces every RSA intermediate step by step and computes MD5 digests with a from-scratch 64-round engine.
 
 [![CI](https://img.shields.io/github/actions/workflow/status/mtorun0x7cd/raven-one-simulink/ci.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=CI)](https://github.com/mtorun0x7cd/raven-one-simulink/actions/workflows/ci.yml)
 ![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
@@ -23,7 +23,7 @@
 
 ## Overview
 
-Raven One SimuLink is a C# WinForms desktop application that makes the RSA public-key cryptosystem and the MD5 message-digest algorithm fully transparent: every intermediate value — from the RSA key parameters to the per-round MD5 state — is written out for inspection. It was built as the practical component of the Bachelor thesis *Password- / Keyless authentication* (TH Köln, June 2021), where the author describes it as his "main work of this thesis"; the thesis presents the program in its implementation chapter and reproduces its full source in the appendix. The name *Raven One SimuLink* is the program's original title from that thesis; despite the "SimuLink" spelling, it has no connection to MATLAB/Simulink.
+Raven One SimuLink is a C# WinForms desktop application that makes the RSA public-key cryptosystem and the MD5 message-digest algorithm transparent: every RSA intermediate value — from the key parameters through the encryption and decryption operands — is written out for inspection, and each MD5 run shows its input, the ASCII encoding of that input, and the resulting 128-bit digest. It was built as the practical component of the Bachelor thesis *Password- / Keyless authentication* (TH Köln, June 2021), where the author describes it as his "main work of this thesis"; the thesis presents the program in its implementation chapter and reproduces its full source in the appendix. The name *Raven One SimuLink* is the program's original title from that thesis; despite the "SimuLink" spelling, it has no connection to MATLAB/Simulink.
 
 The program is a pedagogical instrument, not a production cryptographic tool. Both algorithms are implemented from scratch — without any cryptographic library — following the definitions in RFC 8017 (RSA) [1] and RFC 1321 (MD5) [2]. RSA runs on small fixed demo primes (p = 11, q = 17) so that each step stays legible by hand: parameters are held in `System.Numerics.BigInteger`, the public exponent `e` is the smallest integer greater than two that is coprime to φ(n), and the private exponent is taken from the closed form `d = (1 + 2·φ(n)) / e`, which yields the modular inverse `e⁻¹ mod φ(n)` for these parameters. MD5 is a complete 64-round Merkle–Damgård [3], [4] construction with the sine-derived K constants and the per-round shift schedule.
 

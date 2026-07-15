@@ -13,7 +13,7 @@
   <PropertyGroup>
     <AssemblyTitle>Raven One SimuLink</AssemblyTitle>
     <Product>Raven One SimuLink</Product>
-    <Description>Educational RSA and MD5 cryptographic simulator that exposes every intermediate computation for step-by-step algorithmic analysis.</Description>
+    <Description>Educational RSA and MD5 cryptographic simulator that traces every RSA intermediate step by step and computes MD5 digests with a from-scratch 64-round engine.</Description>
     <Authors>Mert Torun</Authors>
     <Company>mtorun0x7cd</Company>
     <Copyright>Copyright (c) 2021-2026 Mert Torun</Copyright>
