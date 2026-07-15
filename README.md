@@ -11,9 +11,9 @@
 > Educational RSA and MD5 cryptographic simulator that traces every RSA intermediate step by step and computes MD5 digests with a from-scratch 64-round engine.
 
 [![CI](https://img.shields.io/github/actions/workflow/status/mtorun0x7cd/raven-one-simulink/ci.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=CI)](https://github.com/mtorun0x7cd/raven-one-simulink/actions/workflows/ci.yml)
-![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
+![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge)
 ![.NET 8](https://img.shields.io/badge/.NET%208-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
-![WinForms](https://img.shields.io/badge/WinForms-0078D6?style=for-the-badge&logo=windows&logoColor=white)
+![WinForms](https://img.shields.io/badge/WinForms-0078D6?style=for-the-badge)
 ![Cryptography](https://img.shields.io/badge/Cryptography-FF6F00?style=for-the-badge&logo=letsencrypt&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
 
