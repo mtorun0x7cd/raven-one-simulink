@@ -1,0 +1,14 @@
+<Project>
+
+  <!-- Route all build output (bin, obj, publish) out of the iCloud-synced source
+       tree and into the git-ignored .tmp.nosync/ directory. The artifacts layout
+       is declared here rather than in the .csproj by necessity: only a
+       Directory.Build.props is imported early enough for restore to honour the
+       relocated intermediate (obj) path; set in the project file it would leave a
+       stray obj/ behind at restore time. -->
+  <PropertyGroup>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsPath>$(MSBuildThisFileDirectory).tmp.nosync/artifacts</ArtifactsPath>
+  </PropertyGroup>
+
+</Project>
