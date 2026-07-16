@@ -31,7 +31,11 @@ jobs:
         run: dotnet build -c Release --nologo
 
       - name: Package build output
-        run: zip -r RavenOneSimuLink.zip bin/Release/net8.0-windows
+        # Directory.Build.props routes build output into the artifacts layout under
+        # .tmp.nosync/, so the deliverable is packaged from there; the zip holds the
+        # output tree itself, without the build-directory prefix.
+        working-directory: .tmp.nosync/artifacts/bin/RavenOneSimuLink/release
+        run: zip -r "$GITHUB_WORKSPACE/RavenOneSimuLink.zip" .
 
       - name: Upload build artifact
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
