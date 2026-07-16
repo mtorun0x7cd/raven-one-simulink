@@ -32,16 +32,19 @@ jobs:
 
       - name: Package build output
         # Directory.Build.props routes build output into the artifacts layout under
-        # .tmp.nosync/, so the deliverable is packaged from there; the zip holds the
+        # .tmp.nosync/, and the packaged deliverable is staged in .tmp.nosync/dist/
+        # alongside it, so no build state lands in the source tree. The zip holds the
         # output tree itself, without the build-directory prefix.
         working-directory: .tmp.nosync/artifacts/bin/RavenOneSimuLink/release
-        run: zip -r "$GITHUB_WORKSPACE/RavenOneSimuLink.zip" .
+        run: |
+          mkdir -p "$GITHUB_WORKSPACE/.tmp.nosync/dist"
+          zip -r "$GITHUB_WORKSPACE/.tmp.nosync/dist/RavenOneSimuLink.zip" .
 
       - name: Upload build artifact
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: RavenOneSimuLink
-          path: RavenOneSimuLink.zip
+          path: .tmp.nosync/dist/*
           if-no-files-found: error
 
   release:
