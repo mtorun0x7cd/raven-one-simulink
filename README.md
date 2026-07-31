@@ -23,9 +23,9 @@
 
 ## Overview
 
-Raven One SimuLink is a C# WinForms desktop application that makes the RSA public-key cryptosystem and the MD5 message-digest algorithm transparent: every RSA intermediate value — from the key parameters through the encryption and decryption operands — is written out for inspection, and each MD5 run shows its input, the ASCII encoding of that input, and the resulting 128-bit digest. It was built as the practical component of the Bachelor thesis *Password- / Keyless authentication* (TH Köln, June 2021), where the author describes it as his "main work of this thesis"; the thesis presents the program in its implementation chapter and reproduces its full source in the appendix. The name *Raven One SimuLink* is the program's original title from that thesis; despite the "SimuLink" spelling, it has no connection to MATLAB/Simulink.
+Raven One SimuLink is a C# WinForms desktop application that makes the RSA public-key cryptosystem and the MD5 message-digest algorithm transparent: every RSA intermediate value — from the key parameters through the encryption and decryption operands — is written out for inspection, and each MD5 run shows its input, the ASCII encoding of that input, and the resulting 128-bit digest. It was built as the practical component of the Bachelor thesis *Password-/Keyless authentication* (TH Köln, June 2021), where the author describes it as his "main work of this thesis"; the thesis presents the program in its implementation chapter and reproduces its cryptographic and GUI-controller source in the appendix. The name *Raven One SimuLink* is the program's original title from that thesis; despite the "SimuLink" spelling, it has no connection to MATLAB/Simulink.
 
-The program is a pedagogical instrument, not a production cryptographic tool. Both algorithms are implemented from scratch — without any cryptographic library — following the definitions in RFC 8017 (RSA) [1] and RFC 1321 (MD5) [2]. RSA runs on small fixed demo primes (p = 11, q = 17) so that each step stays legible by hand: parameters are held in `System.Numerics.BigInteger`, the public exponent `e` is the smallest integer greater than two that is coprime to φ(n), and the private exponent is taken from the closed form `d = (1 + 2·φ(n)) / e`, which yields the modular inverse `e⁻¹ mod φ(n)` for these parameters. MD5 is a complete 64-round Merkle–Damgård [3], [4] construction with the sine-derived K constants and the per-round shift schedule.
+The program is a pedagogical instrument, not a production cryptographic tool. Both algorithms are implemented from scratch — without any cryptographic library — following the definitions in RFC 8017 (RSA) [1] and RFC 1321 (MD5) [2]. RSA runs on small fixed demo primes (p = 11, q = 17) so that each step stays legible by hand: parameters are held in `System.Numerics.BigInteger`, the public exponent `e` is the smallest integer greater than two that is coprime to φ(n), and the private exponent is taken from the closed form `d = (1 + 2·φ(n)) / e`, which yields the modular inverse `e⁻¹ mod φ(n)` for these parameters. MD5 is a 64-round Merkle–Damgård [3], [4] construction with the sine-derived K constants and the per-round shift schedule; its padding stage is defective for a subset of message lengths, as recorded in [`SECURITY.md`](SECURITY.md).
 
 A digest-validation workflow compares two MD5 digests side by side, illustrating the integrity check that underlies digital-signature verification.
 
@@ -45,23 +45,23 @@ A digest-validation workflow compares two MD5 digests side by side, illustrating
 ## Features
 
 - **RSA Key Parameters** — displays the primes p, q, the modulus n = p·q, the Euler totient φ(n) = (p−1)(q−1), the public exponent e, and the private exponent d for the fixed demo primes
-- **RSA Encryption / Decryption** — computes c = mᵉ mod n and m = cᵈ mod n, logging the operands of each step
-- **Custom MD5 Hashing** — from-scratch 64-round Merkle–Damgård digest per RFC 1321
+- **RSA Encryption / Decryption** — computes c = mᵉ mod n and m = cᵈ mod n for integer messages m with 0 ≤ m < n = 187, logging the operands of each step
+- **Custom MD5 Hashing** — from-scratch 64-round Merkle–Damgård digest following RFC 1321, subject to the padding defect recorded in [`SECURITY.md`](SECURITY.md)
 - **Digest Validation** — side-by-side comparison of two MD5 digests, the integrity check behind digital-signature verification
 - **Transparent Computation** — every intermediate value (keys, digests, ASCII codes, operands) is written to the detail panel for step-by-step study
 
 ## Architecture
 
-The source preserved here is the listing from the thesis appendix: the two cryptographic engines, the GUI controller, and the application entry point.
+Three of the four files preserved here are the listing from the thesis appendix (Chapter 7): the two cryptographic engines and the GUI controller. The entry point is a later reconstruction.
 
 | File | Class | Responsibility |
 | ------ | ------- | ---------------- |
-| `Program.cs` | `Program`, `Form1` (partial) | WinForms entry point (`Main`) and the auxiliary `RSA` / `MD5` / `About` form stubs |
+| `Program.cs` | `Program`, `Form1` (partial) | WinForms entry point (`Main`) and the auxiliary `RSA` / `MD5` / `About` form stubs — reconstructed, not part of the appendix |
 | `Raven One.cs` | `Form1` (partial) | Main GUI controller — drives the encrypt, decrypt, hash, and validate actions and renders intermediate values |
 | `cRSA.cs` | `cRSA` | RSA engine — Euclidean GCD, key derivation, modular exponentiation over `BigInteger` |
 | `cMD5.cs` | `cMD5` | MD5 engine — 64-round computation with per-round shift tables and sine-derived constants |
 
-> The thesis appendix lists these source classes only; the WinForms designer layout is not part of that listing, so a fresh build compiles the algorithm logic and hosts it in a minimal window. The original application as it ran in 2021 is documented with screenshots in the thesis (Chapter 5).
+> The thesis appendix reproduces `cMD5.cs`, `cRSA.cs` and `Raven One.cs` only; the entry point and the WinForms designer layout are a later reconstruction, and that layout parents no controls, so a fresh build compiles the algorithm logic but opens an empty window. The original application as it ran in 2021 is documented by a screenshot in the thesis (Figure 32, page 42).
 
 ### MD5 Cryptographic Dataflow Diagram
 
@@ -149,8 +149,8 @@ graph TD
 
 ```text
 raven-one-simulink/
-├── src/                       # Source code (as listed in the thesis appendix)
-│   ├── Program.cs             # WinForms entry point and form stubs
+├── src/                       # Source code (thesis appendix listing plus a reconstructed entry point)
+│   ├── Program.cs             # WinForms entry point and form stubs (reconstructed)
 │   ├── Raven One.cs           # Main GUI controller (Form1)
 │   ├── cRSA.cs                # RSA engine
 │   └── cMD5.cs                # MD5 engine
@@ -184,7 +184,7 @@ dotnet build -c Release   # compiles on Windows, macOS, or Linux
 dotnet run                # run on Windows
 ```
 
-The project is configured for cross-platform compilation; executing the WinForms application requires Windows.
+The project is configured for cross-platform compilation; executing the WinForms application requires Windows. Because the designer layout is not part of the preserved listing, the rebuilt executable opens an empty window: the algorithms are exercisable only by referencing `cRSA` and `cMD5` directly.
 
 ## Documentation
 
