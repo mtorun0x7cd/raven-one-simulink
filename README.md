@@ -35,7 +35,7 @@ A digest-validation workflow compares two MD5 digests side by side, illustrating
 | :--- | :--- |
 | **Institution** | TH Köln (University of Applied Sciences) — Institut für Nachrichtentechnik (INT) |
 | **Program** | Computer Science & Engineering (Technische Informatik), B.Sc. |
-| **Thesis** | *Password- / Keyless authentication* (June 2021) — Raven One SimuLink is its practical cryptographic component (Chapter 5; source in the appendix), thesis graded *sehr gut* (excellent) |
+| **Thesis** | *Password-/Keyless authentication* (June 2021) — Raven One SimuLink is its practical cryptographic component (Chapter 5; source in the appendix), thesis graded *sehr gut* (very good) |
 | **First reviewer** | Prof. Dr. Michael Silverberg (TH Köln) |
 | **Second reviewer** | Frank Mördel (Jamestown US-Immobilien GmbH) |
 | **Semester** | Summer 2021 |
@@ -162,10 +162,18 @@ raven-one-simulink/
 │   ├── social_preview_dark.png   # Dark-theme header, rendered from the SVG
 │   ├── social_card.png        # Social-media preview card
 │   └── render.sh              # Flattens the SVG master into the served PNGs
+├── .github/                   # CI workflows, funding, dependabot
 ├── RavenOneSimuLink.csproj    # .NET 8 project file
+├── Directory.Build.props      # Routes build output into .tmp.nosync/artifacts
+├── CITATION.cff
+├── CONTRIBUTING.md
+├── NOTICE
+├── SECURITY.md
 ├── LICENSE                    # MIT License
 └── README.md
 ```
+
+(Repository dotfiles and tooling configuration are omitted from this view.)
 
 ## Getting Started
 
@@ -213,7 +221,7 @@ This is an archived, educational project and is not actively maintained. Its cry
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE). It was originally released under GPL-3.0-or-later as the 2021 B.Sc. thesis submission and has since been relicensed to MIT by the author, the sole copyright holder; see [`NOTICE`](NOTICE). The MIT License governs.
+This project is licensed under the [MIT License](LICENSE). It was originally released under GPL-3.0-or-later as the 2021 B.Sc. thesis submission and has since been relicensed to MIT by the author, the sole copyright holder; see [`NOTICE`](NOTICE). The MIT License governs the software and the repository's own documentation; the documents under `docs/` are reproduced as historical record and carry third-party figures under their rights holders' terms, as [`NOTICE`](NOTICE) sets out.
 
 ## Contact
 

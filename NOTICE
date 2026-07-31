@@ -8,3 +8,11 @@ The author, Mert Torun — the sole copyright holder — has relicensed the work
 under the MIT License. The MIT License now governs all use and supersedes the
 earlier GPL-3.0-or-later terms. No third-party GPL-licensed code is
 incorporated; the prior GPL notice covered only the author's own code.
+
+The MIT License covers the software in src/ and the repository's own
+documentation. The documents in docs/ — "Bachelor Thesis.pdf" and
+"Handout.pdf" — are reproduced as historical record: they contain third-party
+figures used under academic quotation, which remain under their respective
+rights holders' terms, and the corporate mark of Jamestown US-Immobilien GmbH.
+The blocking notice on page 71 of the thesis restricted access until
+30th June 2024; that restriction has expired.
