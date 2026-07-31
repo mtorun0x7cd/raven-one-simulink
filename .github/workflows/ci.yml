@@ -37,8 +37,13 @@ jobs:
         # output tree itself, without the build-directory prefix.
         working-directory: .tmp.nosync/artifacts/bin/RavenOneSimuLink/release
         run: |
+          # Reproducible archive: normalize mtimes to the commit date and emit
+          # entries in a stable order so repeated runs are byte-identical.
+          export TZ=UTC LC_ALL=C
+          SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)
+          find . -exec touch --no-dereference --date="@$SOURCE_DATE_EPOCH" {} +
           mkdir -p "$GITHUB_WORKSPACE/.tmp.nosync/dist"
-          zip -r "$GITHUB_WORKSPACE/.tmp.nosync/dist/RavenOneSimuLink.zip" .
+          find . -mindepth 1 | sort | zip -X -@ "$GITHUB_WORKSPACE/.tmp.nosync/dist/RavenOneSimuLink.zip"
 
       - name: Upload build artifact
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
