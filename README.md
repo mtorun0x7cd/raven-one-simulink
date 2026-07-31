@@ -86,7 +86,7 @@ graph TD
 ```
 
 <details>
-  <summary>MD5 Execution Trace for "admin"</summary>
+  <summary>MD5 Reference Trace for "admin" — computed from the algorithm, not program output</summary>
   <ul>
     <li><strong>Input string:</strong> <code>admin</code></li>
     <li><strong>Padded block (hex):</strong><br>
@@ -189,7 +189,7 @@ git clone https://github.com/mtorun0x7cd/raven-one-simulink.git
 cd raven-one-simulink
 
 dotnet build -c Release   # compiles on Windows, macOS, or Linux
-dotnet run                # run on Windows
+dotnet run -c Release     # run on Windows
 ```
 
 The project is configured for cross-platform compilation; executing the WinForms application requires Windows. Because the designer layout is not part of the preserved listing, the rebuilt executable opens an empty window: the algorithms are exercisable only by referencing `cRSA` and `cMD5` directly.
@@ -199,7 +199,7 @@ The project is configured for cross-platform compilation; executing the WinForms
 | Document | Description |
 | --- | --- |
 | [Bachelor Thesis.pdf](docs/Bachelor%20Thesis.pdf) | Full thesis, *Password-/Keyless authentication*; Raven One SimuLink is presented in Chapter 5 and its source reproduced in the appendix |
-| [Handout.pdf](docs/Handout.pdf) | Colloquium handout summarizing the thesis |
+| [Handout.pdf](docs/Handout.pdf) | Colloquium handout summarizing the thesis (German) |
 
 ## References
 
@@ -207,9 +207,9 @@ The project is configured for cross-platform compilation; executing the WinForms
 
 [2] R. Rivest, "The MD5 Message-Digest Algorithm," RFC 1321, 1992. [RFC 1321](https://www.rfc-editor.org/rfc/rfc1321)
 
-[3] R. Merkle, "A Certified Digital Signature," *Advances in Cryptology — CRYPTO '89*, 1989.
+[3] R. Merkle, "A Certified Digital Signature," in *Advances in Cryptology — CRYPTO '89*, LNCS 435, Springer, 1990, pp. 218–238.
 
-[4] I. Damgård, "A Design Principle for Hash Functions," *Advances in Cryptology — CRYPTO '89*, 1989.
+[4] I. Damgård, "A Design Principle for Hash Functions," in *Advances in Cryptology — CRYPTO '89*, LNCS 435, Springer, 1990, pp. 416–427.
 
 ## Citation
 
