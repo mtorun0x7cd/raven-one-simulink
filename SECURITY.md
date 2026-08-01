@@ -18,11 +18,11 @@ The cryptography is intentionally insecure, for pedagogical clarity:
   since 2004. It is implemented here only to illustrate the Merkle–Damgård
   construction.
 - The **MD5** padding computation mis-sizes the message buffer for inputs
-  whose byte length is 56–62 modulo 64: the length field then overwrites the
-  0x80 terminator instead of extending the message by a further block, and the
-  digest returned for those inputs does not match RFC 1321. No error is
-  raised. The defect is preserved as part of the 2021 record and is not
-  corrected here.
+  whose byte length is 56–62 modulo 64: instead of extending the message by a
+  further block, the length field is written back into the final block over
+  the message tail or its 0x80 terminator, and the digest returned for those
+  inputs does not match RFC 1321. No error is raised. The defect is preserved
+  as part of the 2021 record and is not corrected here.
 - The **RSA** implementation uses fixed, trivially small demo primes
   (p = 11, q = 17), performs no padding (no PKCS #1 / OAEP), and operates on
   integer messages. It is correct only for a decimal integer message m with

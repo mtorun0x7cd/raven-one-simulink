@@ -198,7 +198,7 @@ The project is configured for cross-platform compilation; executing the WinForms
 
 | Document | Description |
 | --- | --- |
-| [Bachelor Thesis.pdf](docs/Bachelor%20Thesis.pdf) | Full thesis, *Password-/Keyless authentication*; Raven One SimuLink is presented in Chapter 5 and its source reproduced in the appendix |
+| [Bachelor Thesis.pdf](docs/Bachelor%20Thesis.pdf) | Full thesis, *Password-/Keyless authentication*; Raven One SimuLink is presented in Chapter 5 and its source reproduced in the appendix; the handwritten signature on the declaration pages is redacted in this published copy |
 | [Handout.pdf](docs/Handout.pdf) | Colloquium handout summarizing the thesis (German) |
 
 ## References
