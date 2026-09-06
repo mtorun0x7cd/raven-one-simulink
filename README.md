@@ -225,7 +225,7 @@ This project is licensed under the [MIT License](LICENSE). It was originally rel
 
 ## Contact
 
-**Mert Torun, M.Sc.** — IT Security Architect · Systems Engineer  
+**Mert Torun, M.Sc.** — Verification of Safety-Critical Systems · Information Security  
 mtorun0x7cd · Research & Development
 
 His work spans the verification and validation of safety-critical systems, infrastructure hardening, and cryptographic integrity, grounded in an M.Sc. in Computer Science & Engineering from TH Köln. This repository is preserved as a record of a completed project rather than maintained as a living tool.
