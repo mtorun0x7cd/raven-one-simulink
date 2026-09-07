@@ -37,7 +37,6 @@ A digest-validation workflow compares two MD5 digests side by side, illustrating
 | **Program** | Computer Science & Engineering (Technische Informatik), B.Sc. |
 | **Thesis** | *Password-/Keyless authentication* (June 2021) — Raven One SimuLink is its practical cryptographic component (Chapter 5; source in the appendix), thesis graded *sehr gut* (very good) |
 | **First reviewer** | Prof. Dr. Michael Silverberg (TH Köln) |
-| **Second reviewer** | Frank Mördel (Jamestown US-Immobilien GmbH) |
 | **Semester** | Summer 2021 |
 | **Type** | Individual |
 | **ePublications** | Thesis to be archived in TH Köln's [institutional repository](https://epb.bibl.th-koeln.de/); persistent URN/DOI added once assigned |
