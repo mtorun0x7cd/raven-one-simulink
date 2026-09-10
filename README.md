@@ -23,7 +23,7 @@
 
 ## Overview
 
-Raven One SimuLink is a C# WinForms desktop application that makes the RSA public-key cryptosystem and the MD5 message-digest algorithm transparent: every RSA intermediate value — from the key parameters through the encryption and decryption operands — is written out for inspection, and each MD5 run shows its input, the ASCII encoding of that input, and the resulting 128-bit digest. It was built as the practical component of the Bachelor's thesis *Password-/Keyless authentication* (TH Köln, June 2021), where the author describes it as his "main work of this thesis"; the thesis presents the program in its implementation chapter and reproduces its cryptographic and GUI-controller source in the appendix. The name *Raven One SimuLink* is the program's original title from that thesis; despite the "SimuLink" spelling, it has no connection to MATLAB/Simulink.
+Raven One SimuLink is a C# WinForms desktop application that makes the RSA public-key cryptosystem and the MD5 message-digest algorithm transparent: every RSA intermediate value — from the key parameters through the encryption and decryption operands — is written out for inspection, and each MD5 run shows its input, the ASCII encoding of that input, and the resulting 128-bit digest. It was built as the practical component of the Bachelor's thesis *Password- / Keyless authentication* (TH Köln, June 2021), where the author describes it as his "main work of this thesis"; the thesis presents the program in its implementation chapter and reproduces its cryptographic and GUI-controller source in the appendix. The name *Raven One SimuLink* is the program's original title from that thesis; despite the "SimuLink" spelling, it has no connection to MATLAB/Simulink.
 
 The program is a pedagogical instrument, not a production cryptographic tool. Both algorithms are implemented from scratch — without any cryptographic library — following the definitions in RFC 8017 (RSA) [1] and RFC 1321 (MD5) [2]. RSA runs on small fixed demo primes (p = 11, q = 17) so that each step stays legible by hand: parameters are held in `System.Numerics.BigInteger`, the public exponent `e` is the smallest integer greater than two that is coprime to φ(n), and the private exponent is taken from the closed form `d = (1 + 2·φ(n)) / e`, which yields the modular inverse `e⁻¹ mod φ(n)` for these parameters. MD5 is a 64-round Merkle–Damgård [3], [4] construction with the sine-derived K constants and the per-round shift schedule; its padding stage is defective for a subset of message lengths, as recorded in [`SECURITY.md`](SECURITY.md).
 
@@ -35,7 +35,7 @@ A digest-validation workflow compares two MD5 digests side by side, illustrating
 | :--- | :--- |
 | **Institution** | TH Köln (University of Applied Sciences) — Institut für Nachrichtentechnik (INT) |
 | **Program** | Computer Science & Engineering (Technische Informatik), B.Sc. |
-| **Thesis** | *Password-/Keyless authentication* (June 2021) — Raven One SimuLink is its practical cryptographic component (Chapter 5; source in the appendix), thesis graded *sehr gut* (very good) |
+| **Thesis** | *Password- / Keyless authentication* (June 2021) — Raven One SimuLink is its practical cryptographic component (Chapter 5; source in the appendix), thesis graded *sehr gut* (very good) |
 | **First reviewer** | Prof. Dr. Michael Silverberg (TH Köln) |
 | **Semester** | Summer 2021 |
 | **Type** | Individual |
@@ -154,7 +154,7 @@ raven-one-simulink/
 │   ├── cRSA.cs                # RSA engine
 │   └── cMD5.cs                # MD5 engine
 ├── docs/                      # Documentation
-│   ├── Bachelor Thesis.pdf    # Thesis "Password-/Keyless authentication" (presents this software in Ch. 5 + appendix)
+│   ├── Bachelor Thesis.pdf    # Thesis "Password- / Keyless authentication" (presents this software in Ch. 5 + appendix)
 │   ├── Handout.pdf            # Colloquium handout
 │   ├── social_preview.svg     # Master source that render.sh flattens into the served PNGs
 │   ├── social_preview_light.png  # Light-theme header, rendered from the SVG
@@ -197,7 +197,7 @@ The project is configured for cross-platform compilation; executing the WinForms
 
 | Document | Description |
 | --- | --- |
-| [Bachelor Thesis.pdf](docs/Bachelor%20Thesis.pdf) | Full thesis, *Password-/Keyless authentication*; Raven One SimuLink is presented in Chapter 5 and its source reproduced in the appendix; the handwritten signature on the declaration pages is redacted in this published copy |
+| [Bachelor Thesis.pdf](docs/Bachelor%20Thesis.pdf) | Full thesis, *Password- / Keyless authentication*; Raven One SimuLink is presented in Chapter 5 and its source reproduced in the appendix; the handwritten signature on the declaration pages is redacted in this published copy |
 | [Handout.pdf](docs/Handout.pdf) | Colloquium handout summarizing the thesis (German) |
 
 ## References
