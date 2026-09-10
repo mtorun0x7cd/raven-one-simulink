@@ -33,13 +33,13 @@ A digest-validation workflow compares two MD5 digests side by side, illustrating
 
 | Dimension | Detail |
 | :--- | :--- |
-| **Institution** | TH Köln (University of Applied Sciences) — Institut für Nachrichtentechnik (INT) |
+| **Institution** | TH Köln (University of Applied Sciences) — Institut für Nachrichtentechnik (INT), renamed Institute of Computer and Communication Technology (ICCT) in 2023 |
 | **Program** | Computer Science & Engineering (Technische Informatik), B.Sc. |
 | **Thesis** | *Password- / Keyless authentication* (June 2021) — Raven One SimuLink is its practical cryptographic component (Chapter 5; source in the appendix), thesis graded *sehr gut* (very good) |
 | **First reviewer** | Prof. Dr. Michael Silverberg (TH Köln) |
 | **Semester** | Summer 2021 |
 | **Type** | Individual |
-| **ePublications** | Thesis to be archived in TH Köln's [institutional repository](https://epb.bibl.th-koeln.de/); persistent URN/DOI added once assigned |
+| **ePublications** | Thesis to be archived in TH Köln's [institutional repository](https://epb.bibl.th-koeln.de/); persistent URN/DOI added once assigned. The catalogue record names the institute ICCT, because the deposit form offers only the current name — the thesis itself was supervised at the INT |
 
 ## Features
 
