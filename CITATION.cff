@@ -39,6 +39,11 @@ references:
       name: "TH Köln (University of Applied Sciences)"
     year: 2021
     thesis-type: "Bachelor thesis"
-    # Persistent URN/DOI to be added once assigned by the TH Koeln institutional
-    # repository. The title above is spelled as the thesis title page and the
-    # signed publication contract spell it, with spaces around the slash.
+    doi: 10.57683/EPUB-3598
+    url: https://epb.bibl.th-koeln.de/frontdoor/index/index/docId/3598
+    identifiers:
+      - type: other
+        value: "urn:nbn:de:hbz:832-epub4-35985"
+        description: "Persistent URN in the TH Koeln institutional repository"
+    # The title above is spelled as the thesis title page and the signed
+    # publication contract spell it, with spaces around the slash.

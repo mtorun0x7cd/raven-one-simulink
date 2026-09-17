@@ -39,7 +39,7 @@ A digest-validation workflow compares two MD5 digests side by side, illustrating
 | **First reviewer** | Prof. Dr. Michael Silverberg (TH Köln) |
 | **Semester** | Summer 2021 |
 | **Type** | Individual |
-| **ePublications** | Thesis to be archived in TH Köln's [institutional repository](https://epb.bibl.th-koeln.de/); persistent URN/DOI added once assigned |
+| **ePublications** | Archived in TH Köln's [institutional repository](https://epb.bibl.th-koeln.de/frontdoor/index/index/docId/3598), open access under CC BY 4.0 — DOI [10.57683/EPUB-3598](https://doi.org/10.57683/EPUB-3598), URN `urn:nbn:de:hbz:832-epub4-35985` |
 
 ## Features
 
