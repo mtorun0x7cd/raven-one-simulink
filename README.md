@@ -39,7 +39,7 @@ A digest-validation workflow compares two MD5 digests side by side, illustrating
 | **First reviewer** | Prof. Dr. Michael Silverberg (TH Köln) |
 | **Semester** | Summer 2021 |
 | **Type** | Individual |
-| **ePublications** | Thesis to be archived in TH Köln's [institutional repository](https://epb.bibl.th-koeln.de/); persistent URN/DOI added once assigned. The catalogue record names the institute ICCT, because the deposit form offers only the current name — the thesis itself was supervised at the INT |
+| **ePublications** | Thesis to be archived in TH Köln's [institutional repository](https://epb.bibl.th-koeln.de/); persistent URN/DOI added once assigned |
 
 ## Features
 
