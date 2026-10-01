@@ -28,6 +28,15 @@ licence of every file; the licence texts are in LICENSES/.
                                 record, with the exceptions of section 2.
                                 Copyright 2021 Mert Torun.
 
+  docs/figures/                 CC BY 4.0. Figures 32 to 36 of the thesis,
+                                the author's own (section 2). Copyright 2021
+                                Mert Torun.
+
+  slides/colloquium-handout-    CC BY 4.0, with the exceptions of section 2.
+  2021-07-05.de.pdf             The handout of the colloquium of 2021-07-05,
+                                in German; not part of the deposited thesis.
+                                Copyright 2021 Mert Torun.
+
   NOTICE, CITATION.cff,         CC BY 4.0. Copyright 2026 Mert Torun.
   codemeta.json,
   publication/README.md,
@@ -44,7 +53,12 @@ the reading copy under publication/.
 
 Marks. Every page of the thesis carries the mark of TH Köln and the mark of
 Jamestown US-Immobilien GmbH, the partner company named in the thesis, in its
-header. Both are excepted.
+header, and so does every page of the colloquium handout under slides/. Both
+marks are excepted.
+
+The colloquium handout. Besides the two marks, the table on its page 1 is
+excepted: the handout's source [2] names it as taken from i.redd.it
+(1 July 2021), "How long will it take to crack your password?".
 
 Figures. The list of figures of the thesis names the source of most figures
 taken from third parties, as below. Where it names none, the entry says so;
@@ -120,6 +134,15 @@ publication/Torun_Password_Keyless_Authentication_reading-copy.pdf
   The deposited file with its images downsampled by Ghostscript, and with the
   document subject set to say that it is a reading copy.
   publication/README.md gives the command.
+
+docs/figures/thesis-figure-32.png to thesis-figure-36.png
+  The image objects 127, 132, 135, 138 and 141 on pages 42 and 44 to 47 of
+  the deposited file, written as PNG by pdfimages (poppler) without other
+  change.
+
+slides/colloquium-handout-2021-07-05.de.pdf
+  The author's copy of the handout. The matriculation number that followed
+  his name on page 1 is removed.
 
 src/cMD5.cs, src/cRSA.cs, src/Raven One.cs
   The author's 2021 source files, stored with LF line endings and without a

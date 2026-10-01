@@ -42,3 +42,18 @@ path = ["verification/README.md"]
 precedence = "closest"
 SPDX-FileCopyrightText = "2026 Mert Torun"
 SPDX-License-Identifier = "CC-BY-4.0"
+
+# Figures 32 to 36 of the thesis, the author's own.
+[[annotations]]
+path = ["docs/figures/thesis-figure-*.png"]
+precedence = "override"
+SPDX-FileCopyrightText = "2021 Mert Torun"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+# The handout of the colloquium, in German; not part of the deposited thesis.
+[[annotations]]
+path = ["slides/colloquium-handout-2021-07-05.de.pdf"]
+precedence = "override"
+SPDX-FileCopyrightText = "2021 Mert Torun"
+SPDX-License-Identifier = "CC-BY-4.0"
+SPDX-FileComment = "CC BY 4.0 does not cover the marks of TH Köln and of the partner company in the page headers, nor the table on page 1, which the handout's source [2] names; see NOTICE."
