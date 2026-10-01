@@ -335,11 +335,11 @@ It runs the printed MD5 and RSA code, prints one line per check and ends with `O
 | The closed form of d holds for 11 and 17, not for 11 and 13 | Limitations | `rsa-closed-form` |
 | The digest of "admin" and its first round | MD5 | `md5-admin`, `md5-admin-trace` |
 | The two blocks of p. 31 have the same digest | MD5 | `md5-collision-p31` |
-| cMD5 is wrong for exactly the lengths of 56 to 62 bytes modulo 64, and so for one input of the RFC 1321 test suite | Limitations, `SECURITY.md` | `md5-padding-defect`, `md5-rfc1321-suite` |
+| Of the lengths from 0 to 255 bytes, cMD5 is wrong for exactly those of 56 to 62 bytes modulo 64, and so for one input of the RFC 1321 test suite | Limitations, `SECURITY.md` | `md5-padding-defect`, `md5-rfc1321-suite` |
 | Characters outside ASCII become byte 63 | Limitations | `ascii-non-ascii` |
 | The digests of Figure 32, and the 256 bytes of its ciphertext | Limitations | `md5-figure-32-plain`, `md5-figure-32-cipher` |
 
-The version of record and the appendix code:
+The version of record, and the appendix code against the printed listing (the second command needs `pdftotext` from poppler-utils):
 
 ```sh
 cd publication && sha256sum -c SHA256SUMS && cd ..
