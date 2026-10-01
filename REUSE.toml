@@ -11,7 +11,7 @@ SPDX-FileComment = "CC BY 4.0 is the licence of the catalogue record, https://do
 # Documentation and metadata. CITATION.cff and codemeta.json quote the
 # abstract of the thesis.
 [[annotations]]
-path = ["NOTICE", "CITATION.cff", "codemeta.json", "publication/README.md", "publication/SHA256SUMS"]
+path = ["NOTICE", "ERRATA.md", "CITATION.cff", "codemeta.json", "publication/README.md", "publication/SHA256SUMS"]
 precedence = "closest"
 SPDX-FileCopyrightText = "2026 Mert Torun"
 SPDX-License-Identifier = "CC-BY-4.0"

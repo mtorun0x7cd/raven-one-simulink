@@ -47,15 +47,16 @@ Jamestown US-Immobilien GmbH, the partner company named in the thesis, in its
 header. Both are excepted.
 
 Figures. The list of figures of the thesis names the source of most figures
-taken from third parties, as below. Where it names none, the entry says so.
+taken from third parties, as below. Where it names none, the entry says so;
+ERRATA.md, entry E-025, records those gaps.
 
   Figure  Page   Rights
   F1      5      Third party. The FIDO Alliance logo is taken from
                  fidoalliance.org (April 2021). The partner company's logo in
-                 the same figure has no source in the thesis.
+                 the same figure has no source in the thesis (E-025).
   F2      6      Third party: images.macrumors.com (May 2021).
   F3      7      Photograph of a building of the partner company; no source
-                 in the thesis.
+                 in the thesis (E-025).
   F4      7      As F3.
   F5      8      As F3.
   F6      9      As F3.
@@ -80,7 +81,7 @@ taken from third parties, as below. Where it names none, the entry says so.
                  (June 2021), shown as on that web page.
   F23     32     Third party: reference [13].
   F24     33     Third party: an image search thumbnail (June 2021) that does
-                 not identify the original.
+                 not identify the original (E-025).
   F25     34     Third party: reference [13].
   F26     35     Third party: reference [13].
   F27     35     Third party: reference [13].
@@ -95,7 +96,7 @@ taken from third parties, as below. Where it names none, the entry says so.
   F35     46     The author's own: class diagram of the main window.
   F36     47     The author's own: activity diagram of RSA.
   F37     49     Screenshot of a web application of the partner company; no
-                 source in the thesis.
+                 source in the thesis (E-025).
   F38     50     Third party: fidoalliance.org (June 2021).
   F39     51     As F37.
   F40     52     No source in the thesis; whether it is the author's own is

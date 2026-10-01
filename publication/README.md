@@ -51,7 +51,7 @@ git -c gpg.ssh.allowedSignersFile=allowed_signers tag -v epub-3598
 gh release verify epub-3598 --repo mtorun0x7cd/raven-one-simulink
 ```
 
-The deposited PDF is untagged, that is, it has no structure for assistive technology, and it cannot change.
+The deposited PDF is untagged, that is, it has no structure for assistive technology, and it cannot change: corrections to the thesis are listed in [`ERRATA.md`](../ERRATA.md).
 
 ## How the reading copy was made
 
