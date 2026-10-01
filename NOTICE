@@ -22,7 +22,12 @@ licence of every file; the licence texts are in LICENSES/.
   src/Program.cs, build files   MIT. Written in 2026; not part of the thesis.
   (RavenOneSimuLink.csproj,     Copyright 2026 Mert Torun.
   Directory.Build.props,
-  global.json, dotfiles)
+  global.json, dotfiles),
+  verification/ (scripts,
+  claim check, expected
+  output), .github/,
+  .githooks/,
+  docs/social/render.sh
 
   publication/*.pdf             CC BY 4.0, the licence of the catalogue
                                 record, with the exceptions of section 2.
@@ -37,10 +42,18 @@ licence of every file; the licence texts are in LICENSES/.
                                 in German; not part of the deposited thesis.
                                 Copyright 2021 Mert Torun.
 
-  NOTICE, CITATION.cff,         CC BY 4.0. Copyright 2026 Mert Torun.
-  codemeta.json,
+  verification/figure-32-       CC BY 4.0. A transcription from Figure 32 of
+  ciphertext.txt                the thesis. Copyright 2021 Mert Torun.
+
+  README.md, CHANGELOG.md,      CC BY 4.0. Documentation and metadata; the
+  ERRATA.md, SECURITY.md,       README, CITATION.cff and codemeta.json quote
+  CONTRIBUTING.md, NOTICE,      the abstract of the thesis. Copyright 2026
+  CITATION.cff, codemeta.json,  Mert Torun.
   publication/README.md,
-  publication/SHA256SUMS
+  publication/SHA256SUMS,
+  verification/README.md,
+  docs/social/social-card.svg,
+  docs/social/social-card.png
 
 
 2. Material of third parties in the thesis
