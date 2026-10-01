@@ -7,7 +7,7 @@
   "license": "https://spdx.org/licenses/MIT",
   "codeRepository": "https://github.com/mtorun0x7cd/raven-one-simulink",
   "programmingLanguage": "C#",
-  "runtimePlatform": ".NET 8",
+  "runtimePlatform": ".NET 10",
   "operatingSystem": "Windows",
   "developmentStatus": "https://www.repostatus.org/#inactive",
   "keywords": [

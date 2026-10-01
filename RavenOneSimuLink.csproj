@@ -4,13 +4,14 @@
 
   Build file for Raven One SimuLink, written in 2026. The program was written
   in 2021 for .NET Framework 4.7.2 (thesis, p. 43); this project builds the
-  printed source files for .NET 8 instead.
+  printed source files for .NET 10, a long-term support release. At the tag
+  epub-3598 it targets .NET 8.
 -->
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFramework>net10.0-windows</TargetFramework>
     <Nullable>disable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
