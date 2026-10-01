@@ -1,0 +1,48 @@
+{
+  "@context": "https://w3id.org/codemeta/3.0",
+  "@type": "SoftwareSourceCode",
+  "name": "Raven One SimuLink",
+  "description": "Raven One SimuLink is the C# Windows Forms program that Mert Torun wrote in 2021 for his Bachelor's thesis \"Password- / Keyless authentication\" at TH Köln, to demonstrate RSA and MD5. This state of the repository, the record tag epub-3598, holds the three source files printed in the appendix of the thesis, an entry point and build files written in 2026, and the deposited thesis as the version of record.",
+  "version": "epub-3598",
+  "license": "https://spdx.org/licenses/GPL-3.0-or-later",
+  "codeRepository": "https://github.com/mtorun0x7cd/raven-one-simulink",
+  "programmingLanguage": "C#",
+  "runtimePlatform": ".NET 8",
+  "operatingSystem": "Windows",
+  "developmentStatus": "https://www.repostatus.org/#inactive",
+  "keywords": [
+    "cryptography",
+    "rsa",
+    "md5",
+    "csharp",
+    "winforms",
+    "bachelor-thesis"
+  ],
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Mert",
+      "familyName": "Torun",
+      "affiliation": {
+        "@type": "Organization",
+        "@id": "https://ror.org/014nnvj65",
+        "name": "Technische Hochschule Köln"
+      }
+    }
+  ],
+  "referencePublication": {
+    "@type": "Thesis",
+    "@id": "https://doi.org/10.57683/EPUB-3598",
+    "name": "Password- / Keyless authentication",
+    "author": [
+      {
+        "@type": "Person",
+        "givenName": "Mert",
+        "familyName": "Torun"
+      }
+    ],
+    "datePublished": "2026-09-14",
+    "inLanguage": "en",
+    "license": "https://spdx.org/licenses/CC-BY-4.0"
+  }
+}

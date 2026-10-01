@@ -1,0 +1,39 @@
+<!--
+  SPDX-FileCopyrightText: 2026 Mert Torun
+  SPDX-License-Identifier: MIT
+
+  Build file for Raven One SimuLink, written in 2026. The program was written
+  in 2021 for .NET Framework 4.7.2 (thesis, p. 43); this project builds the
+  printed source files for .NET 8 instead.
+-->
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>disable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <!-- Lets the Windows Forms project compile on Linux and macOS as well. -->
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <!-- Only src/ belongs to the program; verification/ has projects of its own. -->
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="src/**/*.cs" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <AssemblyTitle>Raven One SimuLink</AssemblyTitle>
+    <Product>Raven One SimuLink</Product>
+    <Description>Raven One SimuLink, the program of the Bachelor's thesis "Password- / Keyless authentication" (2021), which demonstrates RSA and MD5.</Description>
+    <Authors>Mert Torun</Authors>
+    <Copyright>Copyright (c) 2021, 2026 Mert Torun</Copyright>
+    <InformationalVersion>epub-3598</InformationalVersion>
+    <NeutralLanguage>en</NeutralLanguage>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/mtorun0x7cd/raven-one-simulink</RepositoryUrl>
+  </PropertyGroup>
+
+</Project>

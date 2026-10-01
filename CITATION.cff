@@ -1,0 +1,68 @@
+cff-version: 1.2.0
+message: >-
+  To cite the Bachelor's thesis, use the preferred citation below. To cite the
+  program as it stands in this repository, use the metadata at the top level.
+type: software
+title: Raven One SimuLink
+abstract: >-
+  Raven One SimuLink is the C# Windows Forms program that Mert Torun wrote in
+  2021 for his Bachelor's thesis "Password- / Keyless authentication" at
+  TH Köln, to demonstrate RSA and MD5. This state of the repository, the record
+  tag epub-3598, holds the three source files printed in the appendix of the
+  thesis, an entry point and build files written in 2026, and the deposited
+  thesis as the version of record.
+authors:
+  - family-names: Torun
+    given-names: Mert
+    affiliation: Technische Hochschule Köln
+version: epub-3598
+date-released: "2026-10-01"
+license: GPL-3.0-or-later
+repository-code: "https://github.com/mtorun0x7cd/raven-one-simulink"
+keywords:
+  - cryptography
+  - rsa
+  - md5
+  - csharp
+  - winforms
+  - bachelor-thesis
+preferred-citation:
+  type: thesis
+  thesis-type: "Bachelor's thesis"
+  title: "Password- / Keyless authentication"
+  authors:
+    - family-names: Torun
+      given-names: Mert
+      affiliation: Technische Hochschule Köln
+  institution:
+    name: Technische Hochschule Köln
+    city: Köln
+    country: DE
+  department: Faculty of Information, Media and Electrical Engineering
+  year: 2026
+  date-published: "2026-09-14"
+  doi: 10.57683/EPUB-3598
+  url: "https://doi.org/10.57683/EPUB-3598"
+  identifiers:
+    - type: other
+      value: "urn:nbn:de:hbz:832-epub4-35985"
+      description: URN of the catalogue record
+  license: CC-BY-4.0
+  languages:
+    - en
+  pages: 72
+  keywords:
+    - Secure
+    - Convenient
+    - Passwordless
+    - Distributed
+    - Authentication
+  notes: "Submitted 2021-06-30 and examined 2021-07-05 at TH Köln; published 2026."
+  abstract: |-
+    The aim of this academic thesis is to investigate and identify the usage possibilities, security and convenience of Password- / Keyless authentication. This is performed within the Web presence of Jamestown US-Immobilien GmbH to specify its use. These requirements will be analyzed in the context of authenticating transactions in the Jamestown Online (JTO, [A1]) application, presenting a passwordless approach.
+
+    In the first part, an introduction to Jamestown US-Immobilien GmbH, Fast IDentity Online (FIDO, [A2]) Alliance and passwords is given. These will show off their company profile, business field and the increasing demand of a convenient authentication in applications like JTO. Also showing off the limitations of password-based authentication, comparing them to the pros and cons of similar approaches.
+
+    The thesis subsequently identifies various methods in detail, and further outlines the structure of a passwordless-based approach in contrast to a password-based approach.
+
+    In conclusion, the thesis argues that convenient access to applications is essential for a company to stay competitive and presents an example for JTO.

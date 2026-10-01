@@ -1,0 +1,15 @@
+<!--
+  SPDX-FileCopyrightText: 2026 Mert Torun
+  SPDX-License-Identifier: MIT
+
+  Build output of every project in this repository goes to artifacts/, which
+  .gitignore excludes. The setting stands here rather than in a project file
+  because only this file is imported early enough for restore to use it.
+-->
+<Project>
+
+  <PropertyGroup>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+  </PropertyGroup>
+
+</Project>

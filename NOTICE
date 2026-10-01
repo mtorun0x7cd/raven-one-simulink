@@ -1,0 +1,134 @@
+NOTICE
+
+raven-one-simulink: companion repository of the Bachelor's thesis
+"Password- / Keyless authentication" by Mert Torun, TH Köln (Technische
+Hochschule Köln); submitted and examined in 2021, published in 2026 under
+https://doi.org/10.57683/EPUB-3598.
+
+This file states the licence of each part of the repository, the material of
+third parties in the thesis, the edits declared for the files taken over, and
+the licence history. REUSE.toml and the SPDX tags in the files give the
+licence of every file; the licence texts are in LICENSES/.
+
+
+1. Licences by path
+
+  src/cMD5.cs, src/cRSA.cs,     GPL-3.0-or-later. The source code printed in
+  src/Raven One.cs              the appendix of the thesis (Appendix I to III,
+                                pp. 53-62), with the licence notice printed
+                                there. Copyright 2021 Mert Torun.
+
+  src/Program.cs, build files   MIT. Written in 2026; not part of the thesis.
+  (RavenOneSimuLink.csproj,     Copyright 2026 Mert Torun.
+  Directory.Build.props,
+  global.json, dotfiles)
+
+  publication/*.pdf             CC BY 4.0, the licence of the catalogue
+                                record, with the exceptions of section 2.
+                                Copyright 2021 Mert Torun.
+
+  NOTICE, CITATION.cff,         CC BY 4.0. Copyright 2026 Mert Torun.
+  codemeta.json,
+  publication/README.md,
+  publication/SHA256SUMS
+
+
+2. Material of third parties in the thesis
+
+The thesis is published under CC BY 4.0. That licence covers what the author
+created. It does not cover the material of third parties in the thesis: this
+repository does not license it, and all rights remain with the holders named
+below or in the list of figures of the thesis (pp. 65-67). The same applies to
+the reading copy under publication/.
+
+Marks. Every page of the thesis carries the mark of TH Köln and the mark of
+Jamestown US-Immobilien GmbH, the partner company named in the thesis, in its
+header. Both are excepted.
+
+Figures. The list of figures of the thesis names the source of most figures
+taken from third parties, as below. Where it names none, the entry says so.
+
+  Figure  Page   Rights
+  F1      5      Third party. The FIDO Alliance logo is taken from
+                 fidoalliance.org (April 2021). The partner company's logo in
+                 the same figure has no source in the thesis.
+  F2      6      Third party: images.macrumors.com (May 2021).
+  F3      7      Photograph of a building of the partner company; no source
+                 in the thesis.
+  F4      7      As F3.
+  F5      8      As F3.
+  F6      9      As F3.
+  F7      10     Third party: reference [13] of the thesis, C. Vogt, lecture
+                 "Operating Systems and Distributed Systems", TH Köln, 2019.
+  F8      11     Third party: reference [13].
+  F9      12     Third party: wikipedia.org, article "Open sesame"
+                 (May 2021); a colorized picture.
+  F10     13     Third party: cloud.google.com (May 2021).
+  F11     14     Third party: halls-of-valhalla.org (May 2021).
+  F12     15     Third party: reference [13].
+  F13     16     Third party: upload.wikimedia.org (May 2021).
+  F14     19     Third party: reference [13].
+  F15     21     Third party: reference [13].
+  F16     23     Third party: reference [13].
+  F17     25     Third party: upload.wikimedia.org (May 2021).
+  F18     26     Third party: reference [13].
+  F19     29     Third party: reference [13].
+  F20     29     Third party: reference [13].
+  F21     30     Third party: reference [13].
+  F22     31     Third party: a hash computed on md5hashgenerator.com
+                 (June 2021), shown as on that web page.
+  F23     32     Third party: reference [13].
+  F24     33     Third party: an image search thumbnail (June 2021) that does
+                 not identify the original.
+  F25     34     Third party: reference [13].
+  F26     35     Third party: reference [13].
+  F27     35     Third party: reference [13].
+  F28     36     Third party: reference [13].
+  F29     39     Third party: upload.wikimedia.org (June 2021).
+  F30     40     Third party: fidoalliance.org, FIDO UAF specification
+                 (June 2021).
+  F31     41     Third party: doubleoctopus.com (June 2021).
+  F32     42     The author's own: a screenshot of Raven One SimuLink.
+  F33     44     The author's own: class diagram of cRSA.
+  F34     45     The author's own: class diagram of cMD5.
+  F35     46     The author's own: class diagram of the main window.
+  F36     47     The author's own: activity diagram of RSA.
+  F37     49     Screenshot of a web application of the partner company; no
+                 source in the thesis.
+  F38     50     Third party: fidoalliance.org (June 2021).
+  F39     51     As F37.
+  F40     52     No source in the thesis; whether it is the author's own is
+                 not established, so it is treated as excepted.
+
+
+3. Notices of 2021 in the thesis
+
+The thesis prints a restriction notice (p. 2) and a blocking notice (p. 71)
+that restricted access to it until 2024-06-30. The restriction has ended; the
+thesis was published open access on 2026-09-14. The deposited file keeps both
+notices as they were printed.
+
+
+4. Declared edits
+
+publication/Torun_Password_Keyless_Authentication.pdf
+  None. The file is byte-identical with the file the catalogue record serves.
+
+publication/Torun_Password_Keyless_Authentication_reading-copy.pdf
+  The deposited file with its images downsampled by Ghostscript, and with the
+  document subject set to say that it is a reading copy.
+  publication/README.md gives the command.
+
+src/cMD5.cs, src/cRSA.cs, src/Raven One.cs
+  The author's 2021 source files, stored with LF line endings and without a
+  byte order mark. Their header comments are as the deposited thesis prints
+  them: the header line that held the author's matriculation number in 2021
+  is blank there, and is blank here.
+
+
+5. Licence history
+
+The three appendix files were printed in 2021 under the GNU General Public
+License, version 3 or later, and stand under it at the tag epub-3598.
+Everything else written for this repository is under the MIT License, or
+CC BY 4.0 where it is documentation or quotes the thesis.

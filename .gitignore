@@ -1,0 +1,31 @@
+# SPDX-FileCopyrightText: 2026 Mert Torun
+# SPDX-License-Identifier: MIT
+
+# Build output (Directory.Build.props sends it to artifacts/).
+artifacts/
+[Bb]in/
+[Oo]bj/
+*.dll
+*.exe
+*.pdb
+
+# NuGet
+*.nupkg
+project.assets.json
+
+# Editors and operating systems
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.swp
+*~
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Python
+__pycache__/
+*.pyc
+.venv/

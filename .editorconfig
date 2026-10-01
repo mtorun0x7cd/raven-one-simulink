@@ -1,0 +1,26 @@
+# SPDX-FileCopyrightText: 2026 Mert Torun
+# SPDX-License-Identifier: MIT
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.{csproj,props,targets}]
+indent_size = 2
+
+[*.{yml,yaml,json,jsonc,toml,cff}]
+indent_size = 2
+
+# The appendix files keep the bytes of the printed listing, including a
+# trailing blank in src/cRSA.cs; an editor must not trim them.
+[src/{cMD5.cs,cRSA.cs,Raven One.cs}]
+trim_trailing_whitespace = false
