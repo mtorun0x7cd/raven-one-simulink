@@ -64,3 +64,10 @@ path = ["docs/social/social-card.png"]
 precedence = "override"
 SPDX-FileCopyrightText = "2026 Mert Torun"
 SPDX-License-Identifier = "CC-BY-4.0"
+
+# The documentation without room for a licence comment.
+[[annotations]]
+path = ["CHANGELOG.md", "SECURITY.md", "CONTRIBUTING.md"]
+precedence = "closest"
+SPDX-FileCopyrightText = "2026 Mert Torun"
+SPDX-License-Identifier = "CC-BY-4.0"
