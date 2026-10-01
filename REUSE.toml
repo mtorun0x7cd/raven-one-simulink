@@ -1,14 +1,5 @@
 version = 1
 
-# The source code printed in the appendix of the thesis (Appendix I to III,
-# pp. 53-62). The files keep their headers as printed, so their licence is
-# stated here and not in them.
-[[annotations]]
-path = ["src/cMD5.cs", "src/cRSA.cs", "src/Raven One.cs"]
-precedence = "closest"
-SPDX-FileCopyrightText = "2021 Mert Torun"
-SPDX-License-Identifier = "GPL-3.0-or-later"
-
 # The deposited thesis and its reading copy.
 [[annotations]]
 path = ["publication/Torun_Password_Keyless_Authentication.pdf", "publication/Torun_Password_Keyless_Authentication_reading-copy.pdf"]

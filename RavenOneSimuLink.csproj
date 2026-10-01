@@ -30,7 +30,7 @@
     <Description>Raven One SimuLink, the program of the Bachelor's thesis "Password- / Keyless authentication" (2021), which demonstrates RSA and MD5.</Description>
     <Authors>Mert Torun</Authors>
     <Copyright>Copyright (c) 2021, 2026 Mert Torun</Copyright>
-    <InformationalVersion>epub-3598</InformationalVersion>
+    <Version>1.1.0</Version>
     <NeutralLanguage>en</NeutralLanguage>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/mtorun0x7cd/raven-one-simulink</RepositoryUrl>

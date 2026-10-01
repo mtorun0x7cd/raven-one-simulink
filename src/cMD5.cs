@@ -10,15 +10,16 @@
  *
  * Date: 2021-04 - 2021-06
  *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * SPDX-FileCopyrightText: 2021 Mert Torun
+ * SPDX-License-Identifier: MIT
  *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
+ * Appendix I of the Bachelor's thesis "Password- / Keyless authentication",
+ * https://doi.org/10.57683/EPUB-3598. The lines above the SPDX tags are as
+ * printed there; the institute keeps the German name under which the thesis
+ * was submitted. The code below this comment is unchanged. The thesis prints
+ * it under the GNU General Public License, version 3 or later; its author, the
+ * sole rights holder, has relicensed it under the MIT License. Copies received
+ * under the GPL keep that licence. See NOTICE.
  */
 using System;
 using System.Collections.Generic;

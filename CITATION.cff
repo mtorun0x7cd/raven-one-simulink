@@ -7,17 +7,16 @@ title: Raven One SimuLink
 abstract: >-
   Raven One SimuLink is the C# Windows Forms program that Mert Torun wrote in
   2021 for his Bachelor's thesis "Password- / Keyless authentication" at
-  TH Köln, to demonstrate RSA and MD5. This state of the repository, the record
-  tag epub-3598, holds the three source files printed in the appendix of the
-  thesis, an entry point and build files written in 2026, and the deposited
-  thesis as the version of record.
+  TH Köln, to demonstrate RSA and MD5. The repository holds the source files
+  printed in the appendix of the thesis, with files written in 2026 around
+  them, and the deposited thesis as the version of record.
 authors:
   - family-names: Torun
     given-names: Mert
     affiliation: Technische Hochschule Köln
-version: epub-3598
+version: 1.1.0
 date-released: "2026-10-01"
-license: GPL-3.0-or-later
+license: MIT
 repository-code: "https://github.com/mtorun0x7cd/raven-one-simulink"
 keywords:
   - cryptography

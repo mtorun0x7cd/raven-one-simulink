@@ -13,10 +13,11 @@ licence of every file; the licence texts are in LICENSES/.
 
 1. Licences by path
 
-  src/cMD5.cs, src/cRSA.cs,     GPL-3.0-or-later. The source code printed in
-  src/Raven One.cs              the appendix of the thesis (Appendix I to III,
-                                pp. 53-62), with the licence notice printed
-                                there. Copyright 2021 Mert Torun.
+  src/cMD5.cs, src/cRSA.cs,     MIT. The source code printed in the appendix
+  src/Raven One.cs              of the thesis (Appendix I to III, pp. 53-62);
+                                GPL-3.0-or-later at the tag epub-3598, as
+                                printed there (section 5). Copyright 2021
+                                Mert Torun.
 
   src/Program.cs, build files   MIT. Written in 2026; not part of the thesis.
   (RavenOneSimuLink.csproj,     Copyright 2026 Mert Torun.
@@ -121,14 +122,19 @@ publication/Torun_Password_Keyless_Authentication_reading-copy.pdf
 
 src/cMD5.cs, src/cRSA.cs, src/Raven One.cs
   The author's 2021 source files, stored with LF line endings and without a
-  byte order mark. Their header comments are as the deposited thesis prints
-  them: the header line that held the author's matriculation number in 2021
-  is blank there, and is blank here.
+  byte order mark. At the tag epub-3598 their header comments are as the
+  deposited thesis prints them: the header line that held the author's
+  matriculation number in 2021 is blank there, and is blank here. Since the
+  relicensing, the GPL notice at the end of each header is replaced by SPDX
+  tags and a note on the licence history; the header lines above them are
+  still as printed, and the code below the header is unchanged.
 
 
 5. Licence history
 
 The three appendix files were printed in 2021 under the GNU General Public
-License, version 3 or later, and stand under it at the tag epub-3598.
-Everything else written for this repository is under the MIT License, or
-CC BY 4.0 where it is documentation or quotes the thesis.
+License, version 3 or later, and stand under it at the tag epub-3598. Their
+author, Mert Torun, holds all rights in them and has relicensed them under the
+MIT License from the commit after that tag. Copies received under the GPL
+keep that grant. Everything else written for this repository is under the
+MIT License, or CC BY 4.0 where it is documentation or quotes the thesis.
