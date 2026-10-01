@@ -32,9 +32,12 @@ jobs:
         with:
           global-json-file: global.json
 
+      - name: Build the claim check
+        run: dotnet build verification/ClaimCheck -c Release --nologo
+
       - name: Run the claim check and compare its output
         run: |
-          dotnet run --project verification/ClaimCheck -c Release > "$RUNNER_TEMP/claims.txt"
+          dotnet run --project verification/ClaimCheck -c Release --no-build > "$RUNNER_TEMP/claims.txt"
           diff -u verification/expected-output.txt "$RUNNER_TEMP/claims.txt"
 
   appendix:
