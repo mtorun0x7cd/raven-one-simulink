@@ -195,7 +195,7 @@ _Figure 34, [F34]: Raven One SimuLink MD5 uml type class diagram (thesis, p. 45)
 
 ![Figure 35 of the thesis: UML class diagram of the main window, titled Raven One, with the field m_rsa, the constructor Form1 and the handlers of the five menu items and of the four buttons.](docs/figures/thesis-figure-35.png)
 
-_Figure 35, [F35]: Raven One SimuLink main gui uml type class diagram (thesis, p. 46). The list of figures calls it an activity diagram (ERRATA.md, E-027). The diagram writes the handler of the Encrypt button as `ecnryptBtn_Click`; the code calls it `encryptBtn_Click`._
+_Figure 35, [F35]: Raven One SimuLink main gui uml type class diagram (thesis, p. 46). The list of figures calls it an activity diagram (ERRATA.md, E-027). The diagram writes the handler of the Encrypt button as `ecnryptBtn_Click`; the code calls it `encryptBtn_Click` (ERRATA.md, E-034)._
 
 ![Figure 36 of the thesis: UML activity diagram of RSA. Read the plaintext, read the ciphertext, calculate n and phi_n, calculate e, and increase e until 1 is less than e, e is less than phi(n) and gcd(e, phi(n)) is 1; then calculate d, and encrypt or decrypt.](docs/figures/thesis-figure-36.png)
 

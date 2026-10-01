@@ -371,6 +371,17 @@ To report an error, write to info@mtorun0x7cd.com and give the page and the pass
 - **Reported:** not reported
 - **Status:** confirmed
 
+### E-034
+
+- **Location:** p. 46 (PDF page 46), chapter 5 From inconvenient to convenient, Figure 35, in the image of the class diagram.
+- **Quoted text:** "ecnryptBtn_Click(sender : object, e : EventArgs) : void"
+- **Correction:** Read "encryptBtn_Click", the name of the handler of the Encrypt button in the code.
+- **Class:** typographical
+- **Evidence:** The listing on p. 61, chapter 7 Appendix, III. Raven One.cs: "private void encryptBtn_Click(object sender, EventArgs e)". The other handlers in Figure 35 are named as in the listing, for example "decryptBtn_Click".
+- **Found:** 2026-10-01
+- **Reported:** not reported
+- **Status:** confirmed
+
 ## Properties of the record and the deposited file
 
 These are not errors of the author's text. The items on the catalogue record describe it as retrieved on 2026-10-01, after the library had worked on a request of 2026-09-27; each item says whether a correction was requested. The deposited file is unchanged.
