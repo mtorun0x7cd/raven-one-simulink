@@ -1,0 +1,46 @@
+# SPDX-FileCopyrightText: 2026 Mert Torun
+# SPDX-License-Identifier: MIT
+
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build twice and compare
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up the .NET SDK that global.json names
+        uses: actions/setup-dotnet@26b0ec14cb23fa6904739307f278c14f94c95bf1 # v5
+        with:
+          global-json-file: global.json
+
+      # The project targets net10.0-windows; EnableWindowsTargeting lets it
+      # compile here. The program itself runs on Windows only.
+      - name: Build the program
+        run: dotnet build RavenOneSimuLink.csproj -c Release --nologo -p:ContinuousIntegrationBuild=true
+
+      - name: Build it again and compare the bytes
+        run: |
+          out=artifacts/bin/RavenOneSimuLink/release
+          cp "$out/RavenOneSimuLink.dll" "$RUNNER_TEMP/first.dll"
+          dotnet build RavenOneSimuLink.csproj -c Release --nologo --no-incremental -p:ContinuousIntegrationBuild=true
+          cmp "$RUNNER_TEMP/first.dll" "$out/RavenOneSimuLink.dll"
+          sha256sum "$out/RavenOneSimuLink.dll"

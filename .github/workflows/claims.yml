@@ -1,0 +1,65 @@
+# SPDX-FileCopyrightText: 2026 Mert Torun
+# SPDX-License-Identifier: MIT
+
+name: Claims
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  claim-check:
+    name: Claim check
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up the .NET SDK that global.json names
+        uses: actions/setup-dotnet@26b0ec14cb23fa6904739307f278c14f94c95bf1 # v5
+        with:
+          global-json-file: global.json
+
+      - name: Run the claim check and compare its output
+        run: |
+          dotnet run --project verification/ClaimCheck -c Release > "$RUNNER_TEMP/claims.txt"
+          diff -u verification/expected-output.txt "$RUNNER_TEMP/claims.txt"
+
+  appendix:
+    name: Appendix code against the printed listing
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out the repository with its tags
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Install pdftotext
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends poppler-utils
+
+      - name: Compare the appendix files with the listing
+        run: python3 verification/check_appendix.py
+
+      - name: Prove that one changed token is found
+        run: python3 verification/check_appendix.py --selftest
+
+      - name: Compare the record tag with the listing, headers included
+        run: |
+          if ! git rev-parse -q --verify refs/tags/epub-3598 > /dev/null; then
+            echo "The tag epub-3598 is not in this clone; the record state was not compared." >&2
+            exit 1
+          fi
+          python3 verification/check_appendix.py --rev epub-3598 --printed-headers
