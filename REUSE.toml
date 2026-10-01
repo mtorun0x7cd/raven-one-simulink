@@ -22,3 +22,23 @@ path = ["global.json"]
 precedence = "closest"
 SPDX-FileCopyrightText = "2026 Mert Torun"
 SPDX-License-Identifier = "MIT"
+
+# Verification. The data file is a transcription from Figure 32 of the thesis;
+# the expected output belongs to the claim check.
+[[annotations]]
+path = ["verification/figure-32-ciphertext.txt"]
+precedence = "closest"
+SPDX-FileCopyrightText = "2021 Mert Torun"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = ["verification/expected-output.txt"]
+precedence = "closest"
+SPDX-FileCopyrightText = "2026 Mert Torun"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = ["verification/README.md"]
+precedence = "closest"
+SPDX-FileCopyrightText = "2026 Mert Torun"
+SPDX-License-Identifier = "CC-BY-4.0"

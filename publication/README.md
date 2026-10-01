@@ -70,4 +70,4 @@ gs -q -dSAFER -dBATCH -dNOPAUSE -sDEVICE=pdfwrite -dPDFSETTINGS=/printer \
    Torun_Password_Keyless_Authentication.pdf docinfo.ps
 ```
 
-Ghostscript writes the date of the run and a new document identifier into the file, so a second run gives a file with the same pages and text but other bytes.
+Ghostscript writes the date of the run and a new document identifier into the file, so a second run gives a file with the same pages and text but other bytes. [`verification/check_reading_copy.py`](../verification/check_reading_copy.py) checks the reading copy against the deposited file: the same pages, text, outline, links, title, author and keywords, the subject above, and every page rendered within a small tolerance.

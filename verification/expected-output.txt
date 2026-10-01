@@ -1,0 +1,19 @@
+PASS reference-md5: the MD5 of the .NET class library gives all 7 digests of the RFC 1321 test suite
+PASS md5-rfc1321-suite: cMD5 gives 6 of the 7 digests of the RFC 1321 test suite; wrong for: the 62-byte input
+PASS md5-admin: cMD5("admin") = 21232f297a57a5a743894a0e4a801fc3
+PASS md5-admin-trace: padded block 61646d696e8000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002800000000000000; after round 0: A = 0x10325476, B = 0x5bd217a9, C = 0xefcdab89, D = 0x98badcfe
+PASS md5-padding-defect: cMD5 differs from the reference for 28 of the lengths 0 to 255 bytes: 56-62, 120-126, 184-190, 248-254 (length mod 64 from 56 to 62)
+PASS md5-figure-32-plain: cMD5("Hallo") = d1bf93299de1b68e6d382c893bf1215f
+PASS md5-figure-32-cipher: the 344 characters of figure-32-ciphertext.txt are Base64 for 256 bytes; cMD5 gives fbae09a483269207be36423cbeaf2f92
+PASS md5-collision-p31: the two 128-byte blocks of thesis p. 31 differ in 6 bytes; cMD5 gives 79054025255fb1a26e4bc422aef54eb4 and 79054025255fb1a26e4bc422aef54eb4
+PASS ascii-non-ascii: Encoding.ASCII, which Raven One.cs uses, turns U+00E4 (a with diaeresis) into byte 63, '?'
+PASS rsa-parameters: p = 11, q = 17, n = 187, phi(n) = 160, e = 3, d = 107
+PASS rsa-key-relation: e * d = 321 = 2 * 160 + 1
+PASS rsa-round-trip: decrypt(encrypt(m)) = m for every m from 0 to 186
+PASS rsa-example-42: encrypt("42") = "36", decrypt("36") = "42"
+PASS rsa-reduction: decrypt(encrypt(m)) = m mod 187 for every m from 187 to 1000; encrypt("200") = "140", decrypt("140") = "13"
+PASS rsa-negative: encrypt("-5") = "-125", decrypt("-125") = "-5"
+PASS rsa-text-input: encrypt("Hallo") raises FormatException; encrypt("") raises FormatException
+PASS rsa-int32-range: encrypt("2147483648"), one more than Int32.MaxValue, raises OverflowException
+PASS rsa-closed-form: the constructor's rule d = (1 + 2 phi) / e gives e = 3, d = 107 for p = 11, q = 17 (e * d mod 160 = 1) and e = 7, d = 34 for p = 11, q = 13 (e * d mod 120 = 118)
+OK: 18 of 18 checks hold
