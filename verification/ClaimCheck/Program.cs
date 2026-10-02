@@ -113,9 +113,9 @@ namespace ClaimCheck
             string admin = Printed(Ascii("admin"));
             Check("md5-admin", admin == "21232f297a57a5a743894a0e4a801fc3", "cMD5(\"admin\") = " + admin);
 
-            // The first of the 64 rounds for "admin", computed with the tables and
-            // the rotation of cMD5 itself; the padded block is the one cMD5 builds
-            // for a 5-byte input.
+            // The first of the 64 operations for "admin", computed with the tables
+            // and the rotation of cMD5 itself; the padded block is the one cMD5
+            // builds for a 5-byte input.
             byte[] block = new byte[64];
             Array.Copy(Ascii("admin"), block, 5);
             block[5] = 0x80;
@@ -134,7 +134,7 @@ namespace ClaimCheck
             bool traceHolds = blockHex == "61646d696e80" + new string('0', 100) + "2800000000000000"
                 && a == 0x10325476 && b == 0x5bd217a9 && c == 0xefcdab89 && d == 0x98badcfe;
             Check("md5-admin-trace", traceHolds, string.Format(
-                "padded block {0}; after round 0: A = 0x{1:x8}, B = 0x{2:x8}, C = 0x{3:x8}, D = 0x{4:x8}",
+                "padded block {0}; after operation 0: A = 0x{1:x8}, B = 0x{2:x8}, C = 0x{3:x8}, D = 0x{4:x8}",
                 blockHex, a, b, c, d));
 
             var defective = new List<int>();

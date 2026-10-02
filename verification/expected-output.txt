@@ -1,7 +1,7 @@
 PASS reference-md5: the MD5 of the .NET class library gives all 7 digests of the RFC 1321 test suite
 PASS md5-rfc1321-suite: cMD5 gives 6 of the 7 digests of the RFC 1321 test suite; wrong for: the 62-byte input
 PASS md5-admin: cMD5("admin") = 21232f297a57a5a743894a0e4a801fc3
-PASS md5-admin-trace: padded block 61646d696e8000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002800000000000000; after round 0: A = 0x10325476, B = 0x5bd217a9, C = 0xefcdab89, D = 0x98badcfe
+PASS md5-admin-trace: padded block 61646d696e8000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002800000000000000; after operation 0: A = 0x10325476, B = 0x5bd217a9, C = 0xefcdab89, D = 0x98badcfe
 PASS md5-padding-defect: cMD5 differs from the reference for 28 of the lengths 0 to 255 bytes: 56-62, 120-126, 184-190, 248-254 (length mod 64 from 56 to 62)
 PASS md5-figure-32-plain: cMD5("Hallo") = d1bf93299de1b68e6d382c893bf1215f
 PASS md5-figure-32-cipher: the 344 characters of figure-32-ciphertext.txt are Base64 for 256 bytes; cMD5 gives fbae09a483269207be36423cbeaf2f92

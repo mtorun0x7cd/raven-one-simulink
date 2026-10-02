@@ -264,39 +264,39 @@ This is textbook RSA. The comment in `cRSA.cs` points to RFC 8017; the two opera
 
 ### MD5
 
-`cMD5.Calculate` pads the message, splits it into blocks of 64 bytes, each read as 16 little-endian words of 32 bits, and runs 64 rounds per block on the registers A, B, C and D. The registers start from a0 = 0x67452301, b0 = 0xefcdab89, c0 = 0x98badcfe and d0 = 0x10325476, the constants the thesis lists on p. 48.
+`cMD5.Calculate` pads the message, splits it into blocks of 64 bytes, each read as 16 little-endian words of 32 bits, and runs 64 operations per block, in four rounds of 16, on the registers A, B, C and D. The registers start from a0 = 0x67452301, b0 = 0xefcdab89, c0 = 0x98badcfe and d0 = 0x10325476, the constants the thesis lists on p. 48.
 
 ```mermaid
 flowchart TD
     accTitle: The MD5 computation of cMD5
-    accDescr: The message bytes are padded with the byte 0x80, zero bytes and the length in bits. Each 64-byte block is read as 16 words. The registers A, B, C and D start from the chaining values a0, b0, c0 and d0, run 64 rounds in four groups of 16 with the functions F, G, H and I, and are added to the chaining values. After the last block, the four chaining values, written as little-endian bytes in hexadecimal, are the digest.
+    accDescr: The message bytes are padded with the byte 0x80, zero bytes and the length in bits. Each 64-byte block is read as 16 words. The registers A, B, C and D start from the chaining values a0, b0, c0 and d0, go through 64 operations in four rounds of 16 with the functions F, G, H and I, and are added to the chaining values. After the last block, the four chaining values, written as little-endian bytes in hexadecimal, are the digest.
     msg["Message bytes"] --> pad["Pad: 0x80, zero bytes, the length in bits in the last 8 bytes"]
     pad --> words["Each 64-byte block: 16 little-endian words M[0] to M[15]"]
     words --> init["A, B, C, D = a0, b0, c0, d0"]
-    init --> rounds["Rounds k = 0 to 63: f = F, G, H or I of B, C, D; then D = C, C = B, B = B + rotl(A + f + K[k] + M[g], s[k]), A = old D"]
-    rounds --> add["a0 += A, b0 += B, c0 += C, d0 += D"]
+    init --> ops["Operations k = 0 to 63 in four rounds of 16: f = F, G, H or I of B, C, D; then D = C, C = B, B = B + rotl(A + f + K[k] + M[g], s[k]), A = old D"]
+    ops --> add["a0 += A, b0 += B, c0 += C, d0 += D"]
     add -->|next block| init
     add --> out["Digest: a0, b0, c0, d0 as little-endian bytes in hexadecimal"]
 ```
 
-| Rounds k | Function f | Word index g |
-| --- | --- | --- |
-| 0-15 | F = (B AND C) OR (NOT B AND D) | k |
-| 16-31 | G = (D AND B) OR (NOT D AND C) | (5k + 1) mod 16 |
-| 32-47 | H = B XOR C XOR D | (3k + 5) mod 16 |
-| 48-63 | I = C XOR (B OR NOT D) | 7k mod 16 |
+| Round | Operation k | Function f | Word index g |
+| --- | --- | --- | --- |
+| 1 | 0-15 | F = (B AND C) OR (NOT B AND D) | k |
+| 2 | 16-31 | G = (D AND B) OR (NOT D AND C) | (5k + 1) mod 16 |
+| 3 | 32-47 | H = B XOR C XOR D | (3k + 5) mod 16 |
+| 4 | 48-63 | I = C XOR (B OR NOT D) | 7k mod 16 |
 
-K[k] is the integer part of 2^32 · abs(sin(k + 1)), and s[k] the number of bits by which round k rotates. The order of the assignments matters: C takes the old value of B before B changes.
+K[k] is the integer part of 2^32 · abs(sin(k + 1)), and s[k] the number of bits by which operation k rotates. The order of the assignments matters: C takes the old value of B before B changes.
 
 <details>
-<summary>The first round for the input "admin"</summary>
+<summary>The first operation for the input "admin"</summary>
 
 - Input: `admin`, 5 bytes.
 - Padded block of 64 bytes: the input, the byte 0x80, 50 zero bytes and the length of 40 bits as a little-endian 64-bit number:
   `61646d696e8000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002800000000000000`
-- Registers before round 0: A = 0x67452301, B = 0xefcdab89, C = 0x98badcfe, D = 0x10325476.
-- Round 0 uses F and the word M[0]. After it: A = 0x10325476, B = 0x5bd217a9, C = 0xefcdab89, D = 0x98badcfe.
-- The digest after all 64 rounds: `21232f297a57a5a743894a0e4a801fc3`.
+- Registers before operation 0: A = 0x67452301, B = 0xefcdab89, C = 0x98badcfe, D = 0x10325476.
+- Operation 0 uses F and the word M[0]. After it: A = 0x10325476, B = 0x5bd217a9, C = 0xefcdab89, D = 0x98badcfe.
+- The digest after all 64 operations: `21232f297a57a5a743894a0e4a801fc3`.
 
 The claim check computes these values with the tables and the rotation of `cMD5` itself (checks `md5-admin-trace` and `md5-admin`).
 
@@ -334,7 +334,7 @@ It runs the printed MD5 and RSA code, prints one line per check and ends with `O
 | A negative m gives a negative result: -5 gives -125, which gives -5 | Limitations, `SECURITY.md` | `rsa-negative` |
 | Text or an empty field raises FormatException; a number beyond the 32-bit range raises OverflowException | Limitations, `SECURITY.md` | `rsa-text-input`, `rsa-int32-range` |
 | The closed form of d holds for 11 and 17, not for 11 and 13 | Limitations | `rsa-closed-form` |
-| The digest of "admin" and its first round | MD5 | `md5-admin`, `md5-admin-trace` |
+| The digest of "admin" and its first operation | MD5 | `md5-admin`, `md5-admin-trace` |
 | The two blocks of p. 31 have the same digest | MD5 | `md5-collision-p31` |
 | Of the lengths from 0 to 255 bytes, cMD5 is wrong for exactly those of 56 to 62 bytes modulo 64, and so for one input of the RFC 1321 test suite | Limitations, `SECURITY.md` | `md5-padding-defect`, `md5-rfc1321-suite` |
 | Characters outside ASCII become byte 63 | Limitations | `ascii-non-ascii` |
