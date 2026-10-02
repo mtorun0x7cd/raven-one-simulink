@@ -333,7 +333,7 @@ Build, on any operating system with the .NET SDK:
 dotnet build RavenOneSimuLink.csproj -c Release
 ```
 
-The output goes to `artifacts/bin/RavenOneSimuLink/release/`. On Linux and macOS the project compiles because it sets `EnableWindowsTargeting`; the restore downloads the Windows reference packages. On Windows, `dotnet run --project RavenOneSimuLink.csproj -c Release` opens the main window, but the window is empty: its layout of 2021 was not preserved (see [Limitations](#limitations)).
+The output goes to `artifacts/bin/RavenOneSimuLink/release/`. On Linux and macOS the project compiles because it sets `EnableWindowsTargeting`; the restore downloads the Windows reference packages. On Windows, `dotnet run --project RavenOneSimuLink.csproj -c Release` opens an empty main window; this follows from `src/Program.cs`, not from a run: it declares the controls without laying them out, because their layout of 2021 was not preserved (see [Limitations](#limitations)).
 
 Claim check, on any operating system:
 
