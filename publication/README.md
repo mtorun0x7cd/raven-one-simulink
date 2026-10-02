@@ -27,11 +27,11 @@ The deposited file differs from the thesis as submitted in 2021 in that the sign
    sha256sum deposited.pdf
    ```
 
-3. The release `epub-3598` carries both files as assets. The public REST API gives the SHA-256 of each asset, which must equal `SHA256SUMS`:
+3. The release `epub-3598` carries both files as assets. The public REST API reports a digest for each asset. Written in hexadecimal without any algorithm prefix, as the command below prints it, the digest of each PDF must equal its line in `SHA256SUMS`:
 
    ```sh
    curl -sSf https://api.github.com/repos/mtorun0x7cd/raven-one-simulink/releases/tags/epub-3598 \
-     | jq -r '.assets[] | "\(.digest)  \(.name)"'
+     | jq -r '.assets[] | "\(.digest | sub("^[^:]*:"; ""))  \(.name)"'
    ```
 
 ### With plain git
