@@ -46,9 +46,9 @@ licence of every file; the licence texts are in LICENSES/.
   ciphertext.txt                the thesis. Copyright 2021 Mert Torun.
 
   README.md, CHANGELOG.md,      CC BY 4.0. Documentation and metadata; the
-  ERRATA.md, SECURITY.md,       README, CITATION.cff and codemeta.json quote
-  CONTRIBUTING.md, NOTICE,      the abstract of the thesis. Copyright 2026
-  CITATION.cff, codemeta.json,  Mert Torun.
+  ERRATA.md, SECURITY.md,       README and CITATION.cff quote the abstract
+  CONTRIBUTING.md, NOTICE,      of the thesis. Copyright 2026 Mert Torun.
+  CITATION.cff, codemeta.json,
   publication/README.md,
   publication/SHA256SUMS,
   verification/README.md,
