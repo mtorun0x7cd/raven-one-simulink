@@ -20,7 +20,8 @@ indent_size = 2
 [*.{yml,yaml,json,jsonc,toml,cff}]
 indent_size = 2
 
-# The appendix files keep the bytes of the printed listing, including a
-# trailing blank in src/cRSA.cs; an editor must not trim them.
+# The code of the appendix files keeps the bytes of the author's files of
+# 2021, stored with LF line endings and without a byte order mark, including
+# a trailing blank in src/cRSA.cs; an editor must not trim them.
 [src/{cMD5.cs,cRSA.cs,Raven One.cs}]
 trim_trailing_whitespace = false
