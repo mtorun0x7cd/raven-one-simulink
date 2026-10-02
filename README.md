@@ -114,7 +114,7 @@ _As published in the catalogue record (https://doi.org/10.57683/EPUB-3598), supp
 | Institution | TH Köln (Technische Hochschule Köln) |
 | Faculty | Faculty of Information, Media and Electrical Engineering (F07) |
 | Institute | Institut für Nachrichtentechnik (INT), as the thesis and its catalogue record name it |
-| Programme | Computer Science & Engineering (Technische Informatik), B.Sc. |
+| Programme | B.Sc. Computer Science & Engineering (Technische Informatik), Embedded Systems |
 | Reviewers | Prof. Dr. Michael Silverberg (First reviewer, TH Köln); Frank Mördel (Second reviewer, Jamestown US-Immobilien GmbH, Cologne) |
 | Partner company | Jamestown US-Immobilien GmbH, Cologne, named in the thesis as the setting of the work |
 | Submitted | 2021-06-30 |
