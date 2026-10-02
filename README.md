@@ -242,6 +242,19 @@ In the detail panel, "P-Value" is the prime p, while "p^e mod n" writes the plai
 
 ### RSA with the program's parameters
 
+Chapter 3 and chapter 5 of the thesis write RSA in different notations, and the code and the detail panel in two more. This README uses the first column:
+
+| This README | Chapter 3, pp. 27-28 | Chapter 5, p. 47 | `src/cRSA.cs` | Detail panel |
+| --- | --- | --- | --- | --- |
+| p, the first prime | p1 | p | `m_p` | `P-Value` |
+| q, the second prime | p2 | q | `m_q` | `Q-Value` |
+| n = p · q | n | n | `m_n` | `N = p * q Value` |
+| φ(n) = (p-1)(q-1) | φ(n) | phi_n | `m_phi_n` | `Phi(n) = (p-1)*(q-1) Value` |
+| e, the public exponent | e, the key KE | e; (n, e) is the public key | `m_e` | `Encryption key` |
+| d, the private exponent | d, the key KD | d; (n, d) is the private key | `m_d` | `Decryption key` |
+| m, the plaintext as an integer | m; m' after decryption | P | the argument of `encryptPlaintext` | p in `p^e mod n` |
+| c, the ciphertext | y | C | the argument of `decryptCiphertext` | c in `c^d mod n` |
+
 The constructor of `cRSA` fixes the two primes, which the thesis calls "constants in the SimuLink software, for testing purposes" (p. 47):
 
 ```math
