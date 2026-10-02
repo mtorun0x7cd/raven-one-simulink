@@ -55,7 +55,7 @@ The deposited PDF is untagged, that is, it has no structure for assistive techno
 
 ## How the reading copy was made
 
-The reading copy is the deposited file passed through Ghostscript 10.08.0 with the `/printer` settings, which downsample its images to 300 dpi, and with one change to its metadata: the document subject, and the description in its XMP metadata, read "Reading copy of https://doi.org/10.57683/EPUB-3598; images downsampled; not the version of record; do not cite". Title, author and keywords are those of the deposited file. The reading copy is not PDF/A.
+The reading copy is the deposited file passed through Ghostscript 10.08.0 with the `/printer` settings, which downsample every image of more than 450 ppi to 300 ppi and keep the pixels of the others, though Ghostscript may compress them anew: Figure 32, for one, keeps its 1054 by 1113 pixels and is stored as JPEG. The metadata differs from that of the deposited file in one place: the document subject, and the description in the XMP metadata, read "Reading copy of https://doi.org/10.57683/EPUB-3598; images downsampled; not the version of record; do not cite". Title, author and keywords are those of the deposited file. The reading copy is not PDF/A.
 
 ```sh
 cat > docinfo.ps <<'EOF'

@@ -144,9 +144,9 @@ publication/Torun_Password_Keyless_Authentication.pdf
   None. The file is byte-identical with the file the catalogue record serves.
 
 publication/Torun_Password_Keyless_Authentication_reading-copy.pdf
-  The deposited file with its images downsampled by Ghostscript, and with the
-  document subject set to say that it is a reading copy.
-  publication/README.md gives the command.
+  The deposited file passed through Ghostscript, which downsamples its images
+  of more than 450 ppi to 300 ppi, with the document subject set to say that
+  it is a reading copy. publication/README.md gives the command.
 
 docs/figures/thesis-figure-32.png to thesis-figure-36.png
   The image objects 127, 132, 135, 138 and 141 on pages 42 and 44 to 47 of
