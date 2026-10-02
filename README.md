@@ -156,8 +156,8 @@ The conclusion opens: "In conclusion, we can say that offering modern authentica
 
 | Path | Content | In the thesis | Licence |
 | --- | --- | --- | --- |
-| [`src/cMD5.cs`](src/cMD5.cs) | The MD5 class | Appendix I, pp. 53-56 | MIT; GPL-3.0-or-later at `epub-3598` |
-| [`src/cRSA.cs`](src/cRSA.cs) | The RSA class | Appendix II, pp. 56-58 | MIT; GPL-3.0-or-later at `epub-3598` |
+| [`src/cMD5.cs`](src/cMD5.cs) | The MD5 class | Appendix I, pp. 53-56; background in 3.2.3, Digital Signatures (p. 29) | MIT; GPL-3.0-or-later at `epub-3598` |
+| [`src/cRSA.cs`](src/cRSA.cs) | The RSA class | Appendix II, pp. 56-58; background in 3.2.2, Public-Key Cryptography (p. 25) | MIT; GPL-3.0-or-later at `epub-3598` |
 | [`src/Raven One.cs`](src/Raven%20One.cs) | The logic of the main window, class `Form1` | Appendix III, pp. 58-62 | MIT; GPL-3.0-or-later at `epub-3598` |
 | [`src/Program.cs`](src/Program.cs) | Entry point, and declarations of the forms and controls the printed files use; written in 2026 | not in the thesis | MIT |
 | `RavenOneSimuLink.csproj`, `Directory.Build.props`, `global.json` | Build files, written in 2026 | not in the thesis | MIT |
@@ -242,6 +242,8 @@ In the detail panel, "P-Value" is the prime p, while "p^e mod n" writes the plai
 
 ### RSA with the program's parameters
 
+Section 3.2.2 of the thesis, Public-Key Cryptography (p. 25), defines RSA and works an example with the primes 5 and 17 (pp. 27-28). Chapter 5 describes the RSA of the program (p. 47), and `src/cRSA.cs` implements it.
+
 Chapter 3 and chapter 5 of the thesis write RSA in different notations, and the code and the detail panel in two more. This README uses the first column:
 
 | This README | Chapter 3, pp. 27-28 | Chapter 5, p. 47 | `src/cRSA.cs` | Detail panel |
@@ -276,6 +278,8 @@ c = 42^{3} \bmod 187 = 74088 \bmod 187 = 36, \qquad m = 36^{107} \bmod 187 = 42
 This is textbook RSA. The comment in `cRSA.cs` points to RFC 8017; the two operations are the RSA primitives of that RFC, RSAEP and RSADP, without the range check of their first step, and none of its encoding schemes, OAEP or PKCS #1 v1.5, is implemented.
 
 ### MD5
+
+Section 3.2.3 of the thesis, Digital Signatures (p. 29), introduces hash functions, names MD5 and prints an MD5 collision (pp. 29-31). Chapter 5 describes the MD5 of the program (pp. 45 and 48), and `src/cMD5.cs` implements it. The Validate digest button compares two digests; a signature as section 3.2.3 describes it, a hash value encrypted with a key, is not computed (see [Limitations](#limitations)).
 
 `cMD5.Calculate` pads the message, splits it into blocks of 64 bytes, each read as 16 little-endian words of 32 bits, and runs 64 operations per block, in four rounds of 16, on the registers A, B, C and D. The registers start from a0 = 0x67452301, b0 = 0xefcdab89, c0 = 0x98badcfe and d0 = 0x10325476, the constants the thesis lists on p. 48.
 
