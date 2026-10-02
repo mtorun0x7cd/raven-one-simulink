@@ -8,6 +8,7 @@ The checks in this folder test what the repository states about the thesis and i
 | `check_appendix.py` | The three appendix files against the listing printed on pp. 53-62 of the deposited thesis | Python 3, `pdftotext` (poppler-utils) |
 | `check_reading_copy.py` | The reading copy against the deposited file | Python 3, poppler-utils, `qpdf` |
 | `check_metadata.py` | `CITATION.cff`, `codemeta.json`, the project file, `CHANGELOG.md` and the BibTeX entry in `README.md` against each other | Python 3, PyYAML |
+| `check_links.py` | The links to doi.org, nbn-resolving.org and this repository in the Markdown files, `CITATION.cff` and `codemeta.json`; other hosts are not requested. `--list` names these links and requests nothing. It returns 2 when it finds no link in scope. `checks.yml` runs it on push and by hand, never as a required check | Python 3, network access |
 
 ## The claim check
 
