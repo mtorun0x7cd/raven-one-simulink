@@ -208,15 +208,16 @@ The diagram follows the code of `src/Program.cs`, `src/Raven One.cs` and `src/cR
 ```mermaid
 flowchart TD
     accTitle: Program flow of Raven One SimuLink
-    accDescr: Program.Main opens the main window, whose constructor creates the RSA object, which computes the keys once. The window then waits for a button or a menu item. Encrypt and Decrypt convert a text field to an integer and compute its third or 107th power modulo 187; text in the field raises a FormatException that no handler catches. Generate digest hashes each field that is not empty with cMD5. Validate digest compares the cipher digest with the typed validation digest. The detail panel shows the values of each step. The File menu opens the description forms, restarts or closes the program.
-    start(["Program.Main"]) --> window["Form1(): create cRSA"]
+    accDescr: Program.Main, the entry point written in 2026, opens the main window, whose constructor creates the RSA object, which computes the keys once. The window then waits for a button or a menu item. Encrypt and Decrypt convert a text field to an integer and compute its third or 107th power modulo 187; text in the field raises a FormatException that no handler catches. Generate digest hashes each field that is not empty with cMD5. Validate digest compares the cipher digest with the typed validation digest. The detail panel shows the values of each step. The File menu opens the RSA and MD5 description forms, restarts or closes the program; the About menu opens the About form.
+    start(["Program.Main, written in 2026"]) --> window["Form1(): create cRSA"]
     window --> keys["cRSA(): p = 11, q = 17, n = 187, phi(n) = 160, e = 3, d = (1 + 2 phi(n)) / e = 107"]
     keys --> wait{"Wait for a button or a menu item"}
     wait -->|Encrypt| enc["m = Convert.ToInt32(Plaintext); Ciphertext = m^3 mod 187"]
     wait -->|Decrypt| dec["c = Convert.ToInt32(Ciphertext); Plaintext = c^107 mod 187"]
     wait -->|Generate digest| md5["For Plaintext and Ciphertext if not empty: ASCII bytes, then cMD5.Calculate into Plain digest and Cipher digest"]
     wait -->|Validate digest| val["String.Compare(Cipher digest, Validation digest)"]
-    wait -->|File menu| menu["Algorithms: RSA or MD5 form; About form; Restart; Close"]
+    wait -->|File menu| menu["Algorithms: RSA or MD5 form; Restart; Close"]
+    wait -->|About menu| about["About form"]
     enc -.->|text or empty field| err["FormatException, not caught"]
     dec -.->|text or empty field| err
     enc --> panel["Detail panel: the values and the result"]
