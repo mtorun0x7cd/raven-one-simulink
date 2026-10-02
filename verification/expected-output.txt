@@ -12,7 +12,7 @@ PASS rsa-key-relation: e * d = 321 = 2 * 160 + 1
 PASS rsa-round-trip: decrypt(encrypt(m)) = m for every m from 0 to 186
 PASS rsa-example-42: encrypt("42") = "36", decrypt("36") = "42"
 PASS rsa-reduction: decrypt(encrypt(m)) = m mod 187 for every m from 187 to 1000; encrypt("200") = "140", decrypt("140") = "13"
-PASS rsa-negative: encrypt("-5") = "-125", decrypt("-125") = "-5"
+PASS rsa-negative: encrypt("-5") = "-125", decrypt("-125") = "-5"; encrypt("-187") = "0", decrypt("0") = "0"
 PASS rsa-text-input: encrypt("Hallo") raises FormatException; encrypt("") raises FormatException
 PASS rsa-int32-range: encrypt("2147483648"), one more than Int32.MaxValue, raises OverflowException
 PASS rsa-closed-form: the constructor's rule d = (1 + 2 phi) / e gives e = 3, d = 107 for p = 11, q = 17 (e * d mod 160 = 1) and e = 7, d = 34 for p = 11, q = 13 (e * d mod 120 = 118)

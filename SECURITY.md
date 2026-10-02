@@ -20,7 +20,7 @@ The weaknesses of the program are known and documented, and they are part of the
 
 - MD5 is not collision resistant; the thesis itself shows a collision (p. 31).
 - The MD5 code returns wrong digests for messages whose length is 56 to 62 bytes modulo 64, and for messages of 2^29 bytes or more it does not follow RFC 1321.
-- The RSA code uses the fixed primes 11 and 17, so n = 187, applies no padding and accepts only decimal integers. An m of 187 or more comes back reduced modulo 187, a negative m gives a negative result, text or an empty field raises a FormatException, and a number beyond the 32-bit range an OverflowException.
+- The RSA code uses the fixed primes 11 and 17, so n = 187, applies no padding and accepts only decimal integers. An m of 187 or more comes back reduced modulo 187, a negative m gives a negative result unless it is a multiple of 187, which gives 0, text or an empty field raises a FormatException, and a number beyond the 32-bit range an OverflowException.
 - The window encodes its text fields as ASCII, so every character outside ASCII becomes "?".
 
 The README describes each of them under Limitations, and `verification/ClaimCheck` checks their numbers, except the 2^29-byte limit, which follows from the code. An error in the text of the thesis is a correction, not a security report; see the README, section Corrections.

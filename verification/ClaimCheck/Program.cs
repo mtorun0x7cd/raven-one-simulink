@@ -240,8 +240,11 @@ namespace ClaimCheck
 
             string cNeg = rsa.encryptPlaintext("-5");
             string mNeg = rsa.decryptCiphertext(cNeg);
-            Check("rsa-negative", cNeg == "-125" && mNeg == "-5",
-                string.Format("encrypt(\"-5\") = \"{0}\", decrypt(\"{0}\") = \"{1}\"", cNeg, mNeg));
+            string cNeg187 = rsa.encryptPlaintext("-187");
+            string mNeg187 = rsa.decryptCiphertext(cNeg187);
+            Check("rsa-negative", cNeg == "-125" && mNeg == "-5" && cNeg187 == "0" && mNeg187 == "0",
+                string.Format("encrypt(\"-5\") = \"{0}\", decrypt(\"{0}\") = \"{1}\"; encrypt(\"-187\") = \"{2}\", decrypt(\"{2}\") = \"{3}\"",
+                    cNeg, mNeg, cNeg187, mNeg187));
 
             string onText = Raises(() => rsa.encryptPlaintext("Hallo"));
             string onEmpty = Raises(() => rsa.encryptPlaintext(""));
