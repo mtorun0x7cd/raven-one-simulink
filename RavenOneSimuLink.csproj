@@ -28,7 +28,7 @@
   <PropertyGroup>
     <AssemblyTitle>Raven One SimuLink</AssemblyTitle>
     <Product>Raven One SimuLink</Product>
-    <Description>Raven One SimuLink, the program of the Bachelor's thesis "Password- / Keyless authentication" (2021), which demonstrates RSA and MD5.</Description>
+    <Description>Raven One SimuLink, the program of the Bachelor's thesis "Password- / Keyless authentication" (2021; published 2026), which demonstrates RSA and MD5.</Description>
     <Authors>Mert Torun</Authors>
     <Copyright>Copyright (c) 2021, 2026 Mert Torun</Copyright>
     <Version>1.1.0</Version>
