@@ -325,9 +325,9 @@ The thesis prints two 128-byte blocks with the same MD5 digest, 79054025255fb1a2
 
 This section reproduces the behaviour of the program, not the conclusions of the thesis about authentication at the partner company.
 
-Tested environment: on 2026-10-01 the claim check was built and run with the .NET SDK 10.0.401 on macOS (arm64); CI builds the program and runs the claim check on ubuntu-24.04 with the SDK that `global.json` names. .NET 10 is a long-term support release, supported until 2028-11-14. The Windows Forms program was not run on Windows in 2026.
+Tested environment: on 2026-10-02 the claim check was built and run with the .NET SDK 10.0.401 on macOS (arm64), and its output is `verification/expected-output.txt`; CI builds the program and runs the claim check on ubuntu-24.04 with the SDK that `global.json` names. .NET 10 is a long-term support release, supported until 2028-11-14. The Windows Forms program was not run on Windows in 2026.
 
-Build, on any operating system with the .NET SDK:
+Build, on any operating system with the .NET SDK 10.0.401 or a later 10.0.4xx patch, as `global.json` requires:
 
 ```sh
 dotnet build RavenOneSimuLink.csproj -c Release
@@ -335,7 +335,7 @@ dotnet build RavenOneSimuLink.csproj -c Release
 
 The output goes to `artifacts/bin/RavenOneSimuLink/release/`. On Linux and macOS the project compiles because it sets `EnableWindowsTargeting`; the restore downloads the Windows reference packages. On Windows, `dotnet run --project RavenOneSimuLink.csproj -c Release` opens an empty main window; this follows from `src/Program.cs`, not from a run: it declares the controls without laying them out or wiring their events, and it declares no menus, because the designer file of 2021 was not preserved (see [Limitations](#limitations)).
 
-Claim check, on any operating system:
+Claim check, on any operating system, with the same SDK:
 
 ```sh
 dotnet run --project verification/ClaimCheck -c Release

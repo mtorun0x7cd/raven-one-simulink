@@ -4,7 +4,7 @@ The checks in this folder test what the repository states about the thesis and i
 
 | Check | What it tests | Needs |
 | --- | --- | --- |
-| `ClaimCheck/` | Each claim of the table under Reproducing in `README.md`, about the MD5 and RSA code: it compiles `src/cMD5.cs` and `src/cRSA.cs` unchanged and runs them; the MD5 of the .NET class library is the reference | .NET SDK 10 (see `global.json`), any operating system |
+| `ClaimCheck/` | Each claim of the table under Reproducing in `README.md`, about the MD5 and RSA code: it compiles `src/cMD5.cs` and `src/cRSA.cs` unchanged and runs them; the MD5 of the .NET class library is the reference | .NET SDK 10.0.401 or a later 10.0.4xx patch (`global.json`), any operating system |
 | `check_appendix.py` | The three appendix files against the listing printed on pp. 53-62 of the deposited thesis | Python 3, `pdftotext` (poppler-utils) |
 | `check_reading_copy.py` | The reading copy against the deposited file | Python 3, poppler-utils, `qpdf` |
 | `check_metadata.py` | `CITATION.cff`, `codemeta.json`, the project file, `CHANGELOG.md` and the BibTeX entry in `README.md` against each other | Python 3, PyYAML |
