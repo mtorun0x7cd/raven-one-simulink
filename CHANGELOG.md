@@ -19,6 +19,15 @@ This repository was recreated with a new history on 2026-10-01; the earlier rele
 - `README.md`, `SECURITY.md`, `CONTRIBUTING.md`, the social card and the workflows.
 - The author's ORCID iD in `CITATION.cff` and `codemeta.json`.
 
+### Fixed
+
+Statements in files that the record tag `epub-3598` holds, corrected here; the tag keeps them as they were:
+
+- `NOTICE` and `REUSE.toml`: the marks of TH Köln and of the partner company stand in the headers of pages 1 to 71, and page 72, the back cover, carries only the mark of TH Köln; at the tag, `NOTICE` says that every page carries both, and `REUSE.toml` names only the page headers.
+- `REUSE.toml`: `CITATION.cff` quotes the abstract of the thesis, as the README does, and `codemeta.json` does not; the tag says that `codemeta.json` quotes it.
+- `publication/README.md`: Ghostscript's `/printer` settings downsample only the images of more than 450 ppi, not every image to 300 dpi; and the digest that the REST API reports for an asset carries the prefix `sha256:`, which the comparison with `SHA256SUMS` now strips.
+- `codemeta.json`: the reference publication is typed `schema:Thesis` and its language is given as `schema:inLanguage`, because the CodeMeta 3.0 context defines neither `Thesis` nor `inLanguage`.
+
 ## [epub-3598] - 2026-10-01
 
 ### Added
