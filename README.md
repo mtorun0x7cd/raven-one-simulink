@@ -425,7 +425,7 @@ GitHub's "Cite this repository" reads [`CITATION.cff`](CITATION.cff) and renders
 | --- | --- |
 | `src/cMD5.cs`, `src/cRSA.cs`, `src/Raven One.cs` | MIT; at the tag `epub-3598` GPL-3.0-or-later, as the thesis prints them |
 | `src/Program.cs`, the build files, the scripts and the claim check in `verification/`, `.github/`, `.githooks/`, `docs/social/render.sh` | MIT |
-| `publication/*.pdf`, `docs/figures/`, `slides/` | CC BY 4.0, the licence of the thesis; the material of third parties and the marks in the page headers are excepted, see [`NOTICE`](NOTICE) |
+| `publication/*.pdf`, `docs/figures/`, `slides/` | CC BY 4.0, the licence of the thesis; the material of third parties and the marks of TH Köln and of the partner company are excepted, see [`NOTICE`](NOTICE) |
 | This README and the other documentation, `CITATION.cff`, `codemeta.json`, `verification/figure-32-ciphertext.txt`, `docs/social/social-card.*` | CC BY 4.0 |
 
 The three appendix files were printed in 2021 under the GNU General Public License, version 3 or later, and stand under it at the tag `epub-3598`. Their author, the sole rights holder, relicensed them under the MIT License in the commit after that tag; copies received under the GPL keep that grant. [`LICENSE`](LICENSE) holds the MIT License and [`LICENSES/`](LICENSES/) the texts of the licences in use; [`REUSE.toml`](REUSE.toml) and the SPDX tags in the files give the licence of every file.

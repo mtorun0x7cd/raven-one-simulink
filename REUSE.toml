@@ -6,7 +6,7 @@ path = ["publication/Torun_Password_Keyless_Authentication.pdf", "publication/To
 precedence = "override"
 SPDX-FileCopyrightText = "2021 Mert Torun"
 SPDX-License-Identifier = "CC-BY-4.0"
-SPDX-FileComment = "CC BY 4.0 is the licence of the catalogue record, https://doi.org/10.57683/EPUB-3598. It does not cover the material of third parties in the thesis: the figures NOTICE lists as third party or without a source, and the marks of TH Köln and of the partner company in the page headers."
+SPDX-FileComment = "CC BY 4.0 is the licence of the catalogue record, https://doi.org/10.57683/EPUB-3598. It does not cover the material of third parties in the thesis: the figures NOTICE lists as third party or without a source, the marks of TH Köln and of the partner company in the headers of pp. 1-71, and the mark of TH Köln on the back cover, p. 72."
 
 # Documentation and metadata. CITATION.cff quotes the abstract of the thesis,
 # as the README does.
