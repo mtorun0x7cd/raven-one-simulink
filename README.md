@@ -286,7 +286,7 @@ flowchart TD
 | 3 | 32-47 | H = B XOR C XOR D | (3k + 5) mod 16 |
 | 4 | 48-63 | I = C XOR (B OR NOT D) | 7k mod 16 |
 
-K[k] is the integer part of 2^32 · abs(sin(k + 1)), and s[k] the number of bits by which operation k rotates. The order of the assignments matters: C takes the old value of B before B changes.
+K[k] is the integer part of 2^32 · abs(sin(k + 1)), and s[k] the number of bits by which operation k rotates. P. 48 prints the shift amounts as the 16 values of a table with one row of four per round; `cMD5` holds all 64, each row of four repeated four times. The order of the assignments matters: C takes the old value of B before B changes.
 
 <details>
 <summary>The first operation for the input "admin"</summary>
