@@ -1,6 +1,6 @@
 # Verification
 
-The checks in this folder test what the repository states about the thesis and its program. Each prints one line per check, PASS or FAIL, and returns 0 when everything holds, 1 on a finding and 2 when it could not run. The workflows `claims.yml` and `checks.yml` run them on every push.
+The checks in this folder test what the repository states about the thesis and its program. Each prints one line per check, PASS or FAIL. The Python scripts return 0 when everything holds, 1 on a finding and 2 when they could not run. The claim check returns 0 or 1; if it stops on an error, the .NET runtime ends it with another code, and if it cannot be built, the build step fails before it runs. The workflows `claims.yml` and `checks.yml` run them on every push.
 
 | Check | What it tests | Needs |
 | --- | --- | --- |
@@ -13,11 +13,12 @@ The checks in this folder test what the repository states about the thesis and i
 ## The claim check
 
 ```sh
-dotnet run --project verification/ClaimCheck -c Release > claims.txt
+dotnet build verification/ClaimCheck -c Release
+dotnet run --project verification/ClaimCheck -c Release --no-build > claims.txt
 diff verification/expected-output.txt claims.txt
 ```
 
-`expected-output.txt` is the output of a run in which all 18 checks hold. The MD5 and RSA classes are compiled as they stand in `src/`. They carry the directive `using System.Windows.Forms;` without using anything from that namespace, and Windows Forms exists only on Windows, so `ClaimCheck/CrossPlatformShim.cs` declares an empty namespace of that name. Nothing else is added to them.
+The build is a step of its own, as in `claims.yml`, so that no message of the .NET SDK reaches the output that is compared. `expected-output.txt` is the output of a run in which all 18 checks hold. The MD5 and RSA classes are compiled as they stand in `src/`. They carry the directive `using System.Windows.Forms;` without using anything from that namespace, and Windows Forms exists only on Windows, so `ClaimCheck/CrossPlatformShim.cs` declares an empty namespace of that name. Nothing else is added to them.
 
 `figure-32-ciphertext.txt` holds the 344 characters that the Ciphertext field of Figure 32 shows (thesis, p. 42; image object 127 of the deposited PDF). They are transcribed from the list "Ciphertext as ASCII Codes" in the detail panel of the same figure, whose digits leave no doubt, unlike glyphs such as I and l. The transcription is confirmed by its MD5, which equals the cipher digest the figure shows.
 
