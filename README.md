@@ -161,7 +161,7 @@ The conclusion opens: "In conclusion, we can say that offering modern authentica
 | [`src/Raven One.cs`](src/Raven%20One.cs) | The logic of the main window, class `Form1` | Appendix III, pp. 58-62 | MIT; GPL-3.0-or-later at `epub-3598` |
 | [`src/Program.cs`](src/Program.cs) | Entry point, and declarations of the forms and controls the printed files use; written in 2026 | not in the thesis | MIT |
 | `RavenOneSimuLink.csproj`, `Directory.Build.props`, `global.json` | Build files, written in 2026 | not in the thesis | MIT |
-| [`verification/`](verification/) | Claim check, appendix check, reading copy check, metadata and link checks | not in the thesis | MIT; the transcription from Figure 32 CC BY 4.0 |
+| [`verification/`](verification/) | Claim check, appendix check, reading copy check, metadata and link checks | not in the thesis | MIT; the transcription from Figure 32 and the folder's README CC BY 4.0 |
 | [`publication/`](publication/) | The deposited thesis, its reading copy and their checksums | the whole thesis | CC BY 4.0, material of third parties excepted |
 | [`docs/figures/`](docs/figures/) | Figures 32 to 36 of the thesis | pp. 42-47 | CC BY 4.0 |
 | [`slides/colloquium-handout-2021-07-05.de.pdf`](slides/colloquium-handout-2021-07-05.de.pdf) | Colloquium handout, 2021-07-05, in German; not part of the deposited thesis | not in the thesis | CC BY 4.0, two marks and one table excepted |
