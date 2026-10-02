@@ -3,8 +3,8 @@
   SPDX-License-Identifier: MIT
 
   The claim check: a console program for any operating system that compiles
-  src/cMD5.cs and src/cRSA.cs unchanged and checks the numbers that README.md
-  and SECURITY.md state about them. It needs no package.
+  src/cMD5.cs and src/cRSA.cs unchanged and checks the claims that the table
+  under Reproducing in README.md lists. It needs no package.
 -->
 <Project Sdk="Microsoft.NET.Sdk">
 

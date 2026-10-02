@@ -4,8 +4,8 @@
 // The claim check of Raven One SimuLink.
 //
 // It runs the MD5 and RSA classes printed in the thesis (src/cMD5.cs and
-// src/cRSA.cs, compiled unchanged) and checks every number that README.md and
-// SECURITY.md state about them. The MD5 digests are compared with the MD5 of
+// src/cRSA.cs, compiled unchanged) and checks each claim that the table under
+// Reproducing in README.md lists. The MD5 digests are compared with the MD5 of
 // the .NET class library as a reference. Each check prints one line, PASS or
 // FAIL, and the run ends with a summary. The exit code is 0 when every check
 // holds and 1 otherwise. CI compares the output with expected-output.txt.
