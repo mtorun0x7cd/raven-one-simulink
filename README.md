@@ -119,7 +119,6 @@ _As published in the catalogue record (https://doi.org/10.57683/EPUB-3598), supp
 | Partner company | Jamestown US-Immobilien GmbH, Cologne, named in the thesis as the setting of the work |
 | Submitted | 2021-06-30 |
 | Examined | 2021-07-05 |
-| Access | Restricted until 2024-06-30 by the blocking notice of the thesis (p. 71); the restriction has ended |
 | Published | 2026-09-14, open access on ePublications, a publication server of TH Köln |
 | DOI | <https://doi.org/10.57683/EPUB-3598> |
 | URN | [urn:nbn:de:hbz:832-epub4-35985](https://nbn-resolving.org/urn:nbn:de:hbz:832-epub4-35985) |
