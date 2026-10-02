@@ -203,14 +203,14 @@ _Figure 36, [F36]: Raven One SimuLink RSA uml type activity diagram (thesis, p. 
 
 ### Program flow
 
-The diagram follows the code of `src/Program.cs`, `src/Raven One.cs` and `src/cRSA.cs`; the table after it gives the same steps as text.
+The diagram shows the flow of the program of 2021 as the printed code gives it: the handlers in `src/Raven One.cs` and the RSA in `src/cRSA.cs`. Which button or menu item calls which handler is inferred from the handlers' names and Figures 32 and 35, because the designer file that wired them was not preserved; `src/Program.cs` of 2026 only opens the window. The table after it gives the same steps as text.
 
 ```mermaid
 flowchart TD
     accTitle: Program flow of Raven One SimuLink
-    accDescr: Program.Main, the entry point written in 2026, opens the main window, whose constructor creates the RSA object, which computes the keys once. The window then waits for a button or a menu item. Encrypt and Decrypt convert a text field to an integer and compute its third or 107th power modulo 187; text in the field raises a FormatException that no handler catches. Generate digest hashes each field that is not empty with cMD5. Validate digest compares the cipher digest with the typed validation digest. The detail panel shows the values of each step. The File menu opens the RSA and MD5 description forms, restarts or closes the program; the About menu opens the About form.
+    accDescr: Program.Main, the entry point written in 2026, opens the main window, whose constructor creates the RSA object, which computes the keys once. The window then waits for a button or a menu item; which control calls which handler is inferred from the handler names. Encrypt and Decrypt convert a text field to an integer and compute its third or 107th power modulo 187; text in the field raises a FormatException that no handler catches. Generate digest hashes each field that is not empty with cMD5. Validate digest compares the cipher digest with the typed validation digest. The detail panel shows the values of each step. The File menu opens the RSA and MD5 description forms, restarts or closes the program; the About menu opens the About form.
     start(["Program.Main, written in 2026"]) --> window["Form1(): create cRSA"]
-    window --> keys["cRSA(): p = 11, q = 17, n = 187, phi(n) = 160, e = 3, d = (1 + 2 phi(n)) / e = 107"]
+    window --> keys["cRSA(): p = 11, q = 17, n = 187, φ(n) = 160, e = 3, d = (1 + 2 φ(n)) / e = 107"]
     keys --> wait{"Wait for a button or a menu item"}
     wait -->|Encrypt| enc["m = Convert.ToInt32(Plaintext); Ciphertext = m^3 mod 187"]
     wait -->|Decrypt| dec["c = Convert.ToInt32(Ciphertext); Plaintext = c^107 mod 187"]
@@ -333,7 +333,7 @@ Build, on any operating system with the .NET SDK:
 dotnet build RavenOneSimuLink.csproj -c Release
 ```
 
-The output goes to `artifacts/bin/RavenOneSimuLink/release/`. On Linux and macOS the project compiles because it sets `EnableWindowsTargeting`; the restore downloads the Windows reference packages. On Windows, `dotnet run --project RavenOneSimuLink.csproj -c Release` opens an empty main window; this follows from `src/Program.cs`, not from a run: it declares the controls without laying them out, because their layout of 2021 was not preserved (see [Limitations](#limitations)).
+The output goes to `artifacts/bin/RavenOneSimuLink/release/`. On Linux and macOS the project compiles because it sets `EnableWindowsTargeting`; the restore downloads the Windows reference packages. On Windows, `dotnet run --project RavenOneSimuLink.csproj -c Release` opens an empty main window; this follows from `src/Program.cs`, not from a run: it declares the controls without laying them out or wiring their events, and it declares no menus, because the designer file of 2021 was not preserved (see [Limitations](#limitations)).
 
 Claim check, on any operating system:
 
@@ -379,7 +379,7 @@ Of the program, as the appendix prints it:
 
 **Figure 32.** The figure shows the plaintext "Hallo" and, in the Ciphertext field, 344 characters of the Base64 alphabet ending in "==", which decode to 256 bytes. The encryption code printed in the appendix accepts only a decimal integer and returns a decimal number below 187; for "Hallo" it raises a FormatException. The two MD5 digests in the figure are those of the printed MD5 code: d1bf93299de1b68e6d382c893bf1215f for "Hallo" and fbae09a483269207be36423cbeaf2f92 for the 344 characters, which [`verification/figure-32-ciphertext.txt`](verification/figure-32-ciphertext.txt) transcribes. How the ciphertext in the figure was produced is not known (E-015).
 
-**Not preserved.** The designer file with the layout of the main window, the three description forms (RSA, MD5 and About), the project files of 2021, the digital appendix handed out with the thesis (p. 43) and the UML files for the Violet UML Editor (p. 44). `src/Program.cs` declares the forms and controls so that the printed files compile, but does not lay them out, so a build opens an empty window.
+**Not preserved.** The designer file with the layout of the main window, the three description forms (RSA, MD5 and About), the project files of 2021, the digital appendix handed out with the thesis (p. 43) and the UML files for the Violet UML Editor (p. 44). `src/Program.cs` declares the forms and controls so that the printed files compile, but does not lay them out, wire their events or declare the menus, so a build opens an empty window.
 
 **Accessibility of the deposit.** The deposited PDF is untagged and declares no document language. As the version of record it cannot be changed, so making it accessible lies outside this repository; the abstracts, the figures with their alternative texts and the tables above are its accessible summary.
 
