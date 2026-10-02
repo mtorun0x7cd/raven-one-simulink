@@ -21,6 +21,7 @@
   "author": [
     {
       "@type": "Person",
+      "@id": "https://orcid.org/0009-0003-7932-9043",
       "givenName": "Mert",
       "familyName": "Torun",
       "affiliation": {
@@ -37,6 +38,7 @@
     "author": [
       {
         "@type": "Person",
+        "@id": "https://orcid.org/0009-0003-7932-9043",
         "givenName": "Mert",
         "familyName": "Torun"
       }

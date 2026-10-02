@@ -5,7 +5,9 @@
 
 Compared:
   * CITATION.cff and codemeta.json: the name of the software, its version and
-    licence, and the DOI, title and publication date of the thesis;
+    licence, the DOI, title and publication date of the thesis, and the
+    author's ORCID iD in both author lists of each file (orcid in
+    CITATION.cff, @id in codemeta.json);
   * the version of RavenOneSimuLink.csproj (Version, or InformationalVersion
     at the record tag) and the first version heading of CHANGELOG.md;
   * the BibTeX entry in README.md: it must parse, be a @mastersthesis of type
@@ -13,8 +15,9 @@ Compared:
   * date-released and date-published must be quoted in CITATION.cff, so that a
     plain YAML loader reads them as strings, as the CFF schema demands.
 
-A file that does not exist yet (README.md, CHANGELOG.md) is reported as not
-compared. Needs PyYAML.
+A file that does not exist yet (README.md, CHANGELOG.md) and an ORCID iD that
+neither side names (as at the record tag) are reported as not compared.
+Needs PyYAML.
 
 Return values: 0 the files agree, 1 a difference, 2 a tool error.
 """
@@ -58,6 +61,13 @@ def project_version():
         raise ToolError("cannot read RavenOneSimuLink.csproj: %s" % exc)
     match = re.search(r"<(Version|InformationalVersion)>([^<]+)</\1>", text)
     return match.group(2).strip() if match else None
+
+
+def first_person(people):
+    """The first entry of an author list, or an empty dict."""
+    if isinstance(people, list) and people and isinstance(people[0], dict):
+        return people[0]
+    return {}
 
 
 def bibtex_entry(readme):
@@ -116,6 +126,17 @@ def main():
     same("doi", DOI_URL + str(cite.get("doi")), publication.get("@id"))
     same("thesis-title", cite.get("title"), publication.get("name"))
     same("date-published", cite.get("date-published"), publication.get("datePublished"))
+    orcid = first_person(cff.get("authors")).get("orcid")
+    for name, a, b in (
+        ("orcid", orcid, first_person(meta.get("author")).get("@id")),
+        ("orcid-thesis", first_person(cite.get("authors")).get("orcid"),
+         first_person(publication.get("author")).get("@id")),
+        ("orcid-citation", orcid, first_person(cite.get("authors")).get("orcid")),
+    ):
+        if a is None and b is None:
+            notes.append("%s: neither side names an ORCID iD; not compared" % name)
+        else:
+            same(name, a, b)
     for key, value in (("date-released", cff.get("date-released")), ("date-published", cite.get("date-published"))):
         if not isinstance(value, str):
             findings.append(key + "-quoted")

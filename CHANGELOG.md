@@ -17,6 +17,7 @@ This repository was recreated with a new history on 2026-10-01; the earlier rele
 - Figures 32 to 36 of the thesis under `docs/figures/`, and the colloquium handout of 2021-07-05 under `slides/`.
 - `ERRATA.md`, the known errors of the deposited thesis.
 - `README.md`, `SECURITY.md`, `CONTRIBUTING.md`, the social card and the workflows.
+- The author's ORCID iD in `CITATION.cff` and `codemeta.json`.
 
 ## [epub-3598] - 2026-10-01
 
