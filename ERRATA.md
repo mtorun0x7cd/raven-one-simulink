@@ -382,6 +382,28 @@ To report an error, write to info@mtorun0x7cd.com and give the page and the pass
 - **Reported:** not reported
 - **Status:** confirmed
 
+### E-035
+
+- **Location:** p. 45 (PDF page 45), chapter 5 From inconvenient to convenient, Figure 34, in the image of the class diagram.
+- **Quoted text:** "- s : int[] { readyOnly }" and "- K : uint[] { readyOnly }"
+- **Correction:** Read "{ readOnly }", the UML property of a field that keeps its value after initialisation; the code declares both arrays readonly.
+- **Class:** typographical
+- **Evidence:** The listing on pp. 53 and 54, chapter 7 Appendix, I. cMD5.cs: "static readonly int[] s = new int[64]" (p. 53) and "static readonly uint[] K = new uint[64]" (p. 54).
+- **Found:** 2026-10-02
+- **Reported:** not reported
+- **Status:** confirmed
+
+### E-036
+
+- **Location:** p. 45 (PDF page 45), chapter 5 From inconvenient to convenient, Figure 34, in the image of the class diagram.
+- **Quoted text:** "- getS() : int[]" and "- getK() : uint[]"
+- **Correction:** Read "+ getS() : int[]" and "+ getK() : uint[]": both methods are public in the code.
+- **Class:** factual, not affecting results
+- **Evidence:** The listing on pp. 53 and 54, chapter 7 Appendix, I. cMD5.cs: "public static int[] getS()" (p. 53) and "public static uint[] getK()" (p. 54). The other members of Figure 34 carry the visibility the listing gives them: leftRotate and Calculate public, GetByteString private.
+- **Found:** 2026-10-02
+- **Reported:** not reported
+- **Status:** confirmed
+
 ## Properties of the record and the deposited file
 
 These are not errors of the author's text. The items on the catalogue record describe it as retrieved on 2026-10-01, after the library had worked on a request of 2026-09-27; each item says whether a correction was requested. The deposited file is unchanged.

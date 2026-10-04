@@ -190,7 +190,7 @@ _Figure 33, [F33]: Raven One SimuLink RSA uml type class diagram (thesis, p. 44)
 
 ![Figure 34 of the thesis: UML class diagram of cMD5, with the read-only arrays s and K and the methods getS, getK, leftRotate, Calculate and GetByteString.](docs/figures/thesis-figure-34.png)
 
-_Figure 34, [F34]: Raven One SimuLink MD5 uml type class diagram (thesis, p. 45)._
+_Figure 34, [F34]: Raven One SimuLink MD5 uml type class diagram (thesis, p. 45). The diagram writes `{ readyOnly }` for `{ readOnly }` (ERRATA.md, E-035) and marks `getS` and `getK` as private, which the code declares public (ERRATA.md, E-036)._
 
 ![Figure 35 of the thesis: UML class diagram of the main window, titled Raven One, with the field m_rsa, the constructor Form1 and the handlers of the five menu items and of the four buttons.](docs/figures/thesis-figure-35.png)
 
