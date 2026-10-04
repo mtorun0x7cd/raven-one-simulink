@@ -367,6 +367,8 @@ python3 verification/check_appendix.py
 
 ## Limitations
 
+Of the thesis: chapter 5 describes passwordless sign-in for the partner company's customer portal (5.1) and for its online subscription form (5.2) at a high level (p. 49). The thesis implements and evaluates neither; it sets the partner company's test of FIDO hardware tokens aside (p. 49) and leaves the subscription form to a later step of the planning (p. 51). The program demonstrates the RSA and MD5 of chapter 3, not passwordless sign-in. The conclusion that the program shows these algorithms to be secure is not supported (E-022).
+
 Of the program, as the appendix prints it:
 
 - **MD5 padding.** For a message whose length in bytes is 56 to 62 modulo 64, the remainder in the padding computation is negative in C#, the buffer is one block too short, and the length is written over the byte 0x80 or the end of the message, so the digest is wrong. Of the lengths from 0 to 255 bytes, 56-62, 120-126, 184-190 and 248-254 give wrong digests, the other 228 right ones; of the seven inputs of the RFC 1321 test suite, the one of 62 bytes fails ([`ERRATA.md`](ERRATA.md), E-024).
