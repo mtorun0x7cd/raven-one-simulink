@@ -34,6 +34,7 @@
   "referencePublication": {
     "@type": "schema:Thesis",
     "@id": "https://doi.org/10.57683/EPUB-3598",
+    "identifier": "swh:1:rel:0752922c9f06de5e5314bd2dd3bd99964420f135",
     "name": "Password- / Keyless authentication",
     "author": [
       {

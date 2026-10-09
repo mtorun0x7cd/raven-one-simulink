@@ -6,6 +6,10 @@ This repository was recreated with a new history on 2026-10-01; the earlier rele
 
 ## [Unreleased]
 
+### Added
+
+- `CITATION.cff` and `codemeta.json`: the Software Heritage identifier of the release `epub-3598`, the repository at the version of record, `swh:1:rel:0752922c9f06de5e5314bd2dd3bd99964420f135`.
+
 ### Changed
 
 - `verification/check_metadata.py` compares the version with the first released section of `CHANGELOG.md` and passes over `[Unreleased]`.
