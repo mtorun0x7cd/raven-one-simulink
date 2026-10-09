@@ -9,7 +9,8 @@ Compared:
     author's ORCID iD in both author lists of each file (orcid in
     CITATION.cff, @id in codemeta.json);
   * the version of RavenOneSimuLink.csproj (Version, or InformationalVersion
-    at the record tag) and the first version heading of CHANGELOG.md;
+    at the record tag) and the first version heading of CHANGELOG.md, passing
+    over [Unreleased];
   * the BibTeX entry in README.md: it must parse, be a @mastersthesis of type
     "Bachelor's thesis", and carry the DOI, title and year of CITATION.cff;
   * date-released and date-published must be quoted in CITATION.cff, so that a
@@ -144,7 +145,7 @@ def main():
 
     changelog = ROOT / "CHANGELOG.md"
     if changelog.is_file():
-        heading = re.search(r"^## \[([^\]]+)\]", changelog.read_text(encoding="utf-8"), re.M)
+        heading = re.search(r"^## \[(?!Unreleased\])([^\]]+)\]", changelog.read_text(encoding="utf-8"), re.M)
         same("version-changelog", cff.get("version"), heading.group(1) if heading else None)
     else:
         notes.append("CHANGELOG.md does not exist; its version was not compared")

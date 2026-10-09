@@ -4,6 +4,12 @@ All notable changes to this repository are listed here. The format follows [Keep
 
 This repository was recreated with a new history on 2026-10-01; the earlier release, v1.0.0 of 2026-08-01, was not the version of record and is withdrawn. Its program archive opened an empty window.
 
+## [Unreleased]
+
+### Changed
+
+- `verification/check_metadata.py` compares the version with the first released section of `CHANGELOG.md` and passes over `[Unreleased]`.
+
 ## [1.1.0] - 2026-10-09
 
 ### Changed
@@ -38,5 +44,6 @@ Statements in files that the record tag `epub-3598` holds, corrected here; the t
 - `src/Program.cs` and the build files for .NET 8, written in 2026 under the MIT License so that the printed files compile.
 - `CITATION.cff`, `codemeta.json`, `NOTICE`, `REUSE.toml` and the licence texts.
 
+[Unreleased]: https://github.com/mtorun0x7cd/raven-one-simulink/compare/v1.1.0...HEAD
 [1.1.0]: https://github.com/mtorun0x7cd/raven-one-simulink/compare/epub-3598...v1.1.0
 [epub-3598]: https://github.com/mtorun0x7cd/raven-one-simulink/releases/tag/epub-3598
