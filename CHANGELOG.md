@@ -10,6 +10,10 @@ This repository was recreated with a new history on 2026-10-01; the earlier rele
 
 - `verification/check_metadata.py` compares the version with the first released section of `CHANGELOG.md` and passes over `[Unreleased]`.
 
+### Fixed
+
+- `README.md`: the labels of the two diagrams keep their ends on GitHub at every zoom. Each label breaks its own lines, and the diagram raises Mermaid's wrapping width to 400 px, so that Mermaid wraps none of them; in Safari, a label that Mermaid wrapped could be measured too narrow at some page zooms and lose its end. The wording is unchanged.
+
 ## [1.1.0] - 2026-10-09
 
 ### Changed

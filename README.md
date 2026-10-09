@@ -205,21 +205,26 @@ _Figure 36, [F36]: Raven One SimuLink RSA uml type activity diagram (thesis, p. 
 The diagram shows the flow of the program of 2021 as the printed code gives it: the handlers in `src/Raven One.cs` and the RSA in `src/cRSA.cs`. Which button or menu item calls which handler is inferred from the handlers' names and Figures 32 and 35, because the designer file that wired them was not preserved; `src/Program.cs` of 2026 only opens the window. The table after it gives the same steps as text.
 
 ```mermaid
+---
+config:
+  flowchart:
+    wrappingWidth: 400
+---
 flowchart TD
     accTitle: Program flow of Raven One SimuLink
     accDescr: Program.Main, the entry point written in 2026, opens the main window, whose constructor creates the RSA object, which computes the keys once. The window then waits for a button or a menu item; which control calls which handler is inferred from the handler names. Encrypt and Decrypt convert a text field to an integer and compute its third or 107th power modulo 187; text in the field raises a FormatException that no handler catches. Generate digest hashes each field that is not empty with cMD5. Validate digest compares the cipher digest with the typed validation digest. The detail panel shows the values of each step. The File menu opens the RSA and MD5 description forms, restarts or closes the program; the About menu opens the About form.
-    start(["Program.Main, written in 2026"]) --> window["Form1(): create cRSA"]
-    window --> keys["cRSA(): p = 11, q = 17, n = 187, φ(n) = 160, e = 3, d = (1 + 2 φ(n)) / e = 107"]
-    keys --> wait{"Wait for a button or a menu item"}
-    wait -->|Encrypt| enc["m = Convert.ToInt32(Plaintext); Ciphertext = m^3 mod 187"]
-    wait -->|Decrypt| dec["c = Convert.ToInt32(Ciphertext); Plaintext = c^107 mod 187"]
-    wait -->|Generate digest| md5["For Plaintext and Ciphertext if not empty: ASCII bytes, then cMD5.Calculate into Plain digest and Cipher digest"]
-    wait -->|Validate digest| val["String.Compare(Cipher digest, Validation digest)"]
-    wait -->|File menu| menu["Algorithms: RSA or MD5 form; Restart; Close"]
+    start(["Program.Main,<br/>written in 2026"]) --> window["Form1(): create cRSA"]
+    window --> keys["cRSA(): p = 11, q = 17, n = 187,<br/>φ(n) = 160, e = 3,<br/>d = (1 + 2 φ(n)) / e = 107"]
+    keys --> wait{"Wait for a button<br/>or a menu item"}
+    wait -->|Encrypt| enc["m = Convert.ToInt32(<br/>Plaintext);<br/>Ciphertext = m^3 mod 187"]
+    wait -->|Decrypt| dec["c = Convert.ToInt32(<br/>Ciphertext);<br/>Plaintext = c^107 mod 187"]
+    wait -->|Generate digest| md5["For Plaintext and<br/>Ciphertext if not empty:<br/>ASCII bytes, then<br/>cMD5.Calculate into<br/>Plain digest and<br/>Cipher digest"]
+    wait -->|Validate digest| val["String.Compare(<br/>Cipher digest,<br/>Validation digest)"]
+    wait -->|File menu| menu["Algorithms:<br/>RSA or MD5 form;<br/>Restart; Close"]
     wait -->|About menu| about["About form"]
-    enc -.->|text or empty field| err["FormatException, not caught"]
+    enc -.->|text or empty field| err["FormatException,<br/>not caught"]
     dec -.->|text or empty field| err
-    enc --> panel["Detail panel: the values and the result"]
+    enc --> panel["Detail panel:<br/>the values and the result"]
     dec --> panel
     md5 --> panel
     val --> panel
@@ -283,16 +288,21 @@ Section 3.2.3 of the thesis, Digital Signatures (p. 29), introduces hash functio
 `cMD5.Calculate` pads the message, splits it into blocks of 64 bytes, each read as 16 little-endian words of 32 bits, and runs 64 operations per block, in four rounds of 16, on the registers A, B, C and D. The registers start from a0 = 0x67452301, b0 = 0xefcdab89, c0 = 0x98badcfe and d0 = 0x10325476, the constants the thesis lists on p. 48.
 
 ```mermaid
+---
+config:
+  flowchart:
+    wrappingWidth: 400
+---
 flowchart TD
     accTitle: The MD5 computation of cMD5
     accDescr: The message bytes are padded with the byte 0x80, zero bytes and the length in bits. Each 64-byte block is read as 16 words. The registers A, B, C and D start from the chaining values a0, b0, c0 and d0, go through 64 operations in four rounds of 16 with the functions F, G, H and I, and are added to the chaining values. After the last block, the four chaining values, written as little-endian bytes in hexadecimal, are the digest.
-    msg["Message bytes"] --> pad["Pad: 0x80, zero bytes, the length in bits in the last 8 bytes"]
-    pad --> words["Each 64-byte block: 16 little-endian words M[0] to M[15]"]
+    msg["Message bytes"] --> pad["Pad: 0x80, zero bytes,<br/>the length in bits in the last 8 bytes"]
+    pad --> words["Each 64-byte block:<br/>16 little-endian words M[0] to M[15]"]
     words --> init["A, B, C, D = a0, b0, c0, d0"]
-    init --> ops["Operations k = 0 to 63 in four rounds of 16: f = F, G, H or I of B, C, D; then D = C, C = B, B = B + rotl(A + f + K[k] + M[g], s[k]), A = old D"]
-    ops --> add["a0 += A, b0 += B, c0 += C, d0 += D"]
+    init --> ops["Operations k = 0 to 63 in four rounds of 16:<br/>f = F, G, H or I of B, C, D;<br/>then D = C, C = B,<br/>B = B + rotl(A + f + K[k] + M[g], s[k]),<br/>A = old D"]
+    ops --> add["a0 += A, b0 += B,<br/>c0 += C, d0 += D"]
     add -->|next block| init
-    add --> out["Digest: a0, b0, c0, d0 as little-endian bytes in hexadecimal"]
+    add --> out["Digest: a0, b0, c0, d0<br/>as little-endian bytes in hexadecimal"]
 ```
 
 | Round | Operation k | Function f | Word index g |
