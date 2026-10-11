@@ -81,7 +81,7 @@ jobs:
           print("codemeta.json expands to %d properties" % len(expanded[0]))
           PYEOF
 
-      - name: Check that the metadata files and the README's BibTeX entry agree
+      - name: Check that the metadata files, the README's BibTeX entry and the errata index agree
         run: |
           "$RUNNER_TEMP/venv/bin/python" verification/check_metadata.py
 

@@ -8,6 +8,47 @@ To report an error, write to info@mtorun0x7cd.com and give the page and the pass
 
 ## Errata
 
+The 36 entries by class: 21 "factual, not affecting results"; 7 "typographical"; 5 "claim not supported by the work's evidence"; 2 "attribution"; 1 "reference could not be traced".
+
+| Entry | Location | Class | Status |
+| --- | --- | --- | --- |
+| [E-001](#e-001) | p. 12 (PDF page 12) | claim not supported by the work's evidence | confirmed |
+| [E-002](#e-002) | p. 15 (PDF page 15) | attribution | confirmed for [7]; [6] not checked |
+| [E-003](#e-003) | p. 16 (PDF page 16) | typographical | confirmed |
+| [E-004](#e-004) | p. 18 (PDF page 18) | factual, not affecting results | confirmed |
+| [E-005](#e-005) | p. 19 (PDF page 19) | factual, not affecting results | confirmed |
+| [E-006](#e-006) | p. 19 (PDF page 19) | factual, not affecting results | confirmed |
+| [E-007](#e-007) | p. 22 (PDF page 22) | factual, not affecting results | confirmed |
+| [E-008](#e-008) | p. 23 (PDF page 23) | factual, not affecting results | confirmed |
+| [E-009](#e-009) | p. 26 (PDF page 26) | typographical | confirmed |
+| [E-010](#e-010) | p. 27 (PDF page 27) | factual, not affecting results | confirmed |
+| [E-011](#e-011) | p. 29 (PDF page 29) | factual, not affecting results | confirmed |
+| [E-012](#e-012) | p. 31 (PDF page 31) | factual, not affecting results | confirmed |
+| [E-013](#e-013) | p. 34 (PDF page 34) | factual, not affecting results | confirmed |
+| [E-014](#e-014) | p. 39 (PDF page 39) | factual, not affecting results | confirmed |
+| [E-015](#e-015) | p. 42 (PDF page 42) | claim not supported by the work's evidence | confirmed |
+| [E-016](#e-016) | p. 43 (PDF page 43) | claim not supported by the work's evidence | confirmed |
+| [E-017](#e-017) | p. 43 (PDF page 43) | claim not supported by the work's evidence | confirmed |
+| [E-018](#e-018) | p. 44 (PDF page 44) | factual, not affecting results | confirmed |
+| [E-019](#e-019) | p. 47 (PDF page 47) | factual, not affecting results | confirmed |
+| [E-020](#e-020) | p. 50 (PDF page 50) | factual, not affecting results | confirmed |
+| [E-021](#e-021) | p. 52 (PDF page 52) | factual, not affecting results | confirmed |
+| [E-022](#e-022) | p. 52 (PDF page 52) | claim not supported by the work's evidence | confirmed |
+| [E-023](#e-023) | p. 54 (PDF page 54) | typographical | confirmed |
+| [E-024](#e-024) | pp. 54-55 (PDF pages 54-55) | factual, not affecting results | confirmed |
+| [E-025](#e-025) | chapter 9 List of Figures | attribution | open; sources not yet determined |
+| [E-026](#e-026) | p. 66 (PDF page 66) | typographical | confirmed |
+| [E-027](#e-027) | p. 67 (PDF page 67) | typographical | confirmed |
+| [E-028](#e-028) | p. 68 (PDF page 68) | factual, not affecting results | confirmed |
+| [E-029](#e-029) | p. 68 (PDF page 68) | factual, not affecting results | confirmed |
+| [E-030](#e-030) | p. 68 (PDF page 68) | factual, not affecting results | confirmed |
+| [E-031](#e-031) | p. 69 (PDF page 69) | factual, not affecting results | confirmed |
+| [E-032](#e-032) | p. 69 (PDF page 69) | factual, not affecting results | confirmed |
+| [E-033](#e-033) | p. 69 (PDF page 69) | reference could not be traced | confirmed |
+| [E-034](#e-034) | p. 46 (PDF page 46) | typographical | confirmed |
+| [E-035](#e-035) | p. 45 (PDF page 45) | typographical | confirmed |
+| [E-036](#e-036) | p. 45 (PDF page 45) | factual, not affecting results | confirmed |
+
 ### E-001
 
 - **Location:** p. 12 (PDF page 12), section 2.1 Knowledge-based, first paragraph after Figure 9.

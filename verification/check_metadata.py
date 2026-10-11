@@ -14,11 +14,17 @@ Compared:
   * the BibTeX entry in README.md: it must parse, be a @mastersthesis of type
     "Bachelor's thesis", and carry the DOI, title and year of CITATION.cff;
   * date-released and date-published must be quoted in CITATION.cff, so that a
-    plain YAML loader reads them as strings, as the CFF schema demands.
+    plain YAML loader reads them as strings, as the CFF schema demands;
+  * the index of ERRATA.md against its entries: every entry under the heading
+    Errata has exactly one row, whose location (the entry's Location up to its
+    first comma), class and status are those of the entry, no row names an
+    entry that does not exist, and the sentence before the table counts the
+    entries per class as they are. A section without an entry is a finding,
+    not a pass.
 
 A file that does not exist yet (README.md, CHANGELOG.md) and an ORCID iD that
-neither side names (as at the record tag) are reported as not compared.
-Needs PyYAML.
+neither side names (as at the record tag) are reported as not compared; a
+missing ERRATA.md is a tool error. Needs PyYAML.
 
 Return values: 0 the files agree, 1 a difference, 2 a tool error.
 """
@@ -100,12 +106,84 @@ def bibtex_entry(readme):
     return match.group(1).lower(), fields
 
 
+def load_errata():
+    try:
+        return (ROOT / "ERRATA.md").read_text(encoding="utf-8")
+    except OSError as exc:
+        raise ToolError("cannot read ERRATA.md: %s" % exc)
+
+
+def errata_index_findings(text):
+    """The differences between the index under '## Errata' and the entries below it."""
+    section = re.search(r"^## Errata\n(.*?)(?=^## |\Z)", text, re.S | re.M)
+    if not section:
+        return ["ERRATA.md has no section Errata"]
+    body = section.group(1)
+    first = re.search(r"^### ", body, re.M)
+    head = body[:first.start()] if first else body
+    found, entries = [], []
+    for match in re.finditer(r"^### (\S+)\n(.*?)(?=^### |\Z)", body, re.S | re.M):
+        fields = dict(re.findall(r"^- \*\*(Location|Class|Status):\*\* (.*)$", match.group(2), re.M))
+        missing = [name for name in ("Location", "Class", "Status") if name not in fields]
+        if missing:
+            found.append("ERRATA.md %s has no %s field" % (match.group(1), " or ".join(missing)))
+            continue
+        location = fields["Location"].split(",")[0].strip()
+        if location.endswith("."):
+            location = location[:-1]
+        entries.append((match.group(1), location, fields["Class"].strip(), fields["Status"].strip()))
+    if not entries and not found:
+        return ["ERRATA.md has no entry under Errata, so its index was not compared"]
+    rows = {}
+    for line in head.splitlines():
+        if not line.startswith("|"):
+            continue
+        cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+        if cells[0] in ("Entry", "---"):
+            continue
+        link = re.fullmatch(r"\[([^\]]+)\]\(#([^)]+)\)", cells[0])
+        if len(cells) != 4 or not link:
+            found.append("ERRATA.md index: a row that is not entry, location, class and status: %r" % line)
+            continue
+        if link.group(2) != link.group(1).lower():
+            found.append("ERRATA.md index: %s links to #%s, not to its anchor" % (link.group(1), link.group(2)))
+        rows.setdefault(link.group(1), []).append(cells[1:])
+    for ident, location, kind, status in entries:
+        got = rows.pop(ident, [])
+        if len(got) != 1:
+            found.append("ERRATA.md index: %s has %d row(s), not one" % (ident, len(got)))
+            continue
+        for what, want, have in zip(("location", "class", "status"), (location, kind, status), got[0]):
+            if want != have:
+                found.append("ERRATA.md index: the %s of %s is %r, the entry says %r" % (what, ident, have, want))
+    for ident in rows:
+        found.append("ERRATA.md index: a row for %s, which has no entry" % ident)
+    counted = re.search(r"^The (\d+) entries by class: (.+)\.$", head, re.M)
+    if not counted:
+        found.append("ERRATA.md index: no sentence 'The N entries by class: ...' before the table")
+    else:
+        claimed, actual = {}, {}
+        for item in counted.group(2).split("; "):
+            pair = re.fullmatch(r'(\d+) "([^"]+)"', item)
+            if not pair:
+                found.append("ERRATA.md index: %r in the count sentence is not a number and a class" % item)
+                continue
+            claimed[pair.group(2)] = int(pair.group(1))
+        for _, _, kind, _ in entries:
+            actual[kind] = actual.get(kind, 0) + 1
+        if int(counted.group(1)) != len(entries) or claimed != actual:
+            found.append("ERRATA.md index: the sentence counts %s entries, %r; the entries are %d, %r"
+                         % (counted.group(1), claimed, len(entries), actual))
+    return found
+
+
 def main():
     findings, notes = [], []
     try:
         cff = load_cff()
         meta = load_codemeta()
         csproj = project_version()
+        errata = load_errata()
     except ToolError as exc:
         print("ERROR " + str(exc))
         return 2
@@ -168,6 +246,14 @@ def main():
                 print("FAIL bibtex-school: the entry names no school")
     else:
         notes.append("README.md does not exist; its BibTeX entry was not compared")
+
+    index = errata_index_findings(errata)
+    if index:
+        findings.append("errata-index")
+        for line in index:
+            print("FAIL errata-index: " + line)
+    else:
+        print("PASS errata-index: one row per entry, location, class and status as in the entries, classes counted")
 
     for note in notes:
         print("NOTE " + note)
