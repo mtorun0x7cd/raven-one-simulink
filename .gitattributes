@@ -26,3 +26,8 @@
 
 # The version of record and its checksums are stored byte for byte.
 publication/** -text -diff
+
+# The checks and the hook are left out of GitHub's language statistics, so that
+# they show the language of the program.
+verification/*.py -linguist-detectable
+.githooks/* -linguist-detectable
