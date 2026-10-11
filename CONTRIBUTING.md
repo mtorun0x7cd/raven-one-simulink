@@ -10,4 +10,4 @@ The text of the thesis changes only by errata: the deposited file stays as it is
 
 ## Pull requests
 
-A pull request that changes the three appendix files under `src/` is not merged: they are kept as the thesis prints them, defects included. Security reports follow [`SECURITY.md`](SECURITY.md).
+The repository is archived and read-only on GitHub, so it takes no pull requests. The three appendix files under `src/` stay as the thesis prints them, defects included. Security reports follow [`SECURITY.md`](SECURITY.md).

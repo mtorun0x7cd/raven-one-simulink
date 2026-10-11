@@ -5,7 +5,7 @@ SPDX-License-Identifier: CC-BY-4.0
 
 # Password- / Keyless authentication
 
-Companion repository of the Bachelor's thesis by Mert Torun, TH Köln; submitted and examined in 2021, published open access in 2026: <https://doi.org/10.57683/EPUB-3598>. It holds Raven One SimuLink, the program written as the thesis's practical component; despite its name, it has no connection to MATLAB or Simulink.
+Companion repository of the Bachelor's thesis by Mert Torun, TH Köln; submitted and examined in 2021, published open access in 2026: <https://doi.org/10.57683/EPUB-3598>. It holds Raven One SimuLink, the Windows Forms program in C# that the author wrote in 2021 as the thesis's practical component to demonstrate RSA and MD5; despite its name, it has no connection to MATLAB or Simulink.
 
 [![DOI: 10.57683/EPUB-3598](https://img.shields.io/badge/DOI-10.57683%2FEPUB--3598-1D4ED8?style=flat)](https://doi.org/10.57683/EPUB-3598) [![Thesis: CC BY 4.0](https://img.shields.io/badge/Thesis-CC_BY_4.0-1D4ED8?style=flat)](LICENSES/CC-BY-4.0.txt) [![Code: MIT](https://img.shields.io/badge/Code-MIT-1D4ED8?style=flat)](LICENSE) [![Status: Inactive](https://img.shields.io/badge/Status-Inactive-1D4ED8?style=flat)](https://www.repostatus.org/#inactive)
 
@@ -149,7 +149,7 @@ The deposited file differs from the thesis as submitted in 2021 in that the sign
 | 7 Appendix | 53 | The source code of Raven One SimuLink: `cMD5.cs` (pp. 53-56), `cRSA.cs` (pp. 56-58) and `Raven One.cs` (pp. 58-62) |
 | 8 to 13 | 63 | List of abbreviations, list of figures, list of tables, references, statutory declaration, blocking notice |
 
-The conclusion opens: "In conclusion, we can say that offering modern authentication is a must-have for companies nowadays." Of the program it says: "The covered algorithms for cryptographic functions like RSA, AES or MAC and the Raven One SimuLink Software do indeed show on a low-level base of software, that it’s possible and secure to enable these modern algorithms." (p. 52). [`ERRATA.md`](ERRATA.md) corrects two statements of the conclusion (E-021 and E-022), and [Limitations](#limitations) states what the program does and does not show.
+The conclusion opens: "In conclusion, we can say that offering modern authentication is a must-have for companies nowadays." Of the program it says: "The covered algorithms for cryptographic functions like RSA, AES or MAC and the Raven One SimuLink Software do indeed show on a low-level base of software, that it’s possible and secure to enable these modern algorithms." (p. 52). [`ERRATA.md`](ERRATA.md) corrects two statements of the conclusion ([E-021](ERRATA.md#e-021) and [E-022](ERRATA.md#e-022)), and [Limitations](#limitations) states what the program does and does not show.
 
 ## Contents
 
@@ -166,14 +166,24 @@ The conclusion opens: "In conclusion, we can say that offering modern authentica
 | [`slides/colloquium-handout-2021-07-05.de.pdf`](slides/colloquium-handout-2021-07-05.de.pdf) | Colloquium handout, 2021-07-05, in German; not part of the deposited thesis | not in the thesis | CC BY 4.0, two marks and one table excepted |
 | [`docs/social/`](docs/social/) | Social card and the script that renders it | not in the thesis | CC BY 4.0; the script MIT |
 | [`ERRATA.md`](ERRATA.md), [`CHANGELOG.md`](CHANGELOG.md), [`NOTICE`](NOTICE), [`CITATION.cff`](CITATION.cff), [`codemeta.json`](codemeta.json) | Errata, changes, licences and credits, citation metadata | not in the thesis | CC BY 4.0 |
+| [`SECURITY.md`](SECURITY.md), [`CONTRIBUTING.md`](CONTRIBUTING.md) | How to report a matter privately, and how corrections are made | not in the thesis | CC BY 4.0 |
+| [`Makefile`](Makefile), [`.github/`](.github/) | The local entry points of the build and the checks; the workflows and the funding file | not in the thesis | MIT |
+| `LICENSE`, `LICENSES/`, `REUSE.toml` | The MIT text, the texts of the licences that files use, and the licence of every path without a header | not in the thesis | none of their own: REUSE 3.3 exempts them from its check |
+| `.editorconfig`, `.gitattributes`, `.gitignore`, `.markdownlint.jsonc`, `.githooks/`, `.gitleaks.toml` | Editor, git, lint and build configuration, and the opt-in secret scan for clones with its configuration | not in the thesis | MIT |
 
 ### Provenance of the code
 
-The three appendix files are the author's source files of 2021, stored with LF line endings and without a byte order mark. At the tag `epub-3598` their header comments are as the deposited thesis prints them, GPL notice included; the header line that held the author's matriculation number is blank there and here. In the next commit the author relicensed them under the MIT License: each header keeps its printed lines and replaces the GPL notice with SPDX tags and a note on the licence history. The code below the headers has not changed since 2021. [`verification/check_appendix.py`](verification/check_appendix.py) checks this on every push: it compares each file with pp. 53-62 of the deposited PDF, line by line with whitespace removed, the whole header at the tag and the printed header lines afterwards; its self-test changes one token per file and must fail. `src/Program.cs` is not in the thesis: the entry point and the designer file of 2021 were not preserved, and it was written in 2026 so that the printed files compile.
+The three appendix files are the author's source files of 2021, stored with LF line endings and without a byte order mark. At the tag `epub-3598` their header comments are as the deposited thesis prints them, GPL notice included; the header line that held the author's matriculation number is blank there and here.
+
+In the next commit the author relicensed them under the MIT License: each header keeps its printed lines and replaces the GPL notice with SPDX tags and a note on the licence history. The code below the headers has not changed since 2021.
+
+[`verification/check_appendix.py`](verification/check_appendix.py) checks this on every push: it compares each file with pp. 53-62 of the deposited PDF, line by line with whitespace removed, the whole header at the tag and the printed header lines afterwards; its self-test changes one token per file and must fail. `src/Program.cs` is not in the thesis: the entry point and the designer file of 2021 were not preserved, and it was written in 2026 so that the printed files compile.
 
 ## Raven One SimuLink
 
-Raven One SimuLink is a Windows Forms program in C#, written by the author from April to June 2021 for .NET Framework 4.7.2 (thesis, p. 43; the months stand in the headers of the source files). The thesis says that the software "is used to demonstrate exemplary cryptographic algorithms" (p. 43): it encrypts and decrypts with RSA, computes MD5 digests and compares two digests. Figure 32 shows the program running in 2021. According to the author, the examiners saw and tested it; no record of that survives. The thesis's Figures 32 to 36 and the program flow below document the program; what Figure 32 shows beyond the printed code is stated under [Limitations](#limitations). Here it is built for .NET 10; at the tag `epub-3598`, for .NET 8.
+Raven One SimuLink is a Windows Forms program in C#, written by the author from April to June 2021 for .NET Framework 4.7.2 (thesis, p. 43; the months stand in the headers of the source files). The thesis says that the software "is used to demonstrate exemplary cryptographic algorithms" (p. 43): it encrypts and decrypts with RSA, computes MD5 digests and compares two digests.
+
+Figure 32 shows the program running in 2021. According to the author, the examiners saw and tested it; no record of that survives. The thesis's Figures 32 to 36 and the program flow below document the program; what Figure 32 shows beyond the printed code is stated under [Limitations](#limitations). Here it is built for .NET 10; at the tag `epub-3598`, for .NET 8.
 
 > [!CAUTION]
 > Raven One SimuLink is a demonstration implementation, not cryptography for use. Its RSA works with the primes 11 and 17 and without padding, and its MD5, a hash function that is no longer collision resistant, returns wrong digests for some input lengths. Do not use the program, or code from it, to protect data.
@@ -190,11 +200,11 @@ _Figure 33, [F33]: Raven One SimuLink RSA uml type class diagram (thesis, p. 44)
 
 ![Figure 34 of the thesis: UML class diagram of cMD5, with the read-only arrays s and K and the methods getS, getK, leftRotate, Calculate and GetByteString.](docs/figures/thesis-figure-34.png)
 
-_Figure 34, [F34]: Raven One SimuLink MD5 uml type class diagram (thesis, p. 45). The diagram writes `{ readyOnly }` for `{ readOnly }` (ERRATA.md, E-035) and marks `getS` and `getK` as private, which the code declares public (ERRATA.md, E-036)._
+_Figure 34, [F34]: Raven One SimuLink MD5 uml type class diagram (thesis, p. 45). The diagram writes `{ readyOnly }` for `{ readOnly }` (ERRATA.md, [E-035](ERRATA.md#e-035)) and marks `getS` and `getK` as private, which the code declares public (ERRATA.md, [E-036](ERRATA.md#e-036))._
 
 ![Figure 35 of the thesis: UML class diagram of the main window, titled Raven One, with the field m_rsa, the constructor Form1 and the handlers of the five menu items and of the four buttons.](docs/figures/thesis-figure-35.png)
 
-_Figure 35, [F35]: Raven One SimuLink main gui uml type class diagram (thesis, p. 46). The list of figures calls it an activity diagram (ERRATA.md, E-027). The diagram writes the handler of the Encrypt button as `ecnryptBtn_Click`; the code calls it `encryptBtn_Click` (ERRATA.md, E-034)._
+_Figure 35, [F35]: Raven One SimuLink main gui uml type class diagram (thesis, p. 46). The list of figures calls it an activity diagram (ERRATA.md, [E-027](ERRATA.md#e-027)). The diagram writes the handler of the Encrypt button as `ecnryptBtn_Click`; the code calls it `encryptBtn_Click` (ERRATA.md, [E-034](ERRATA.md#e-034))._
 
 ![Figure 36 of the thesis: UML activity diagram of RSA. Read the plaintext, read the ciphertext, calculate n and phi_n, calculate e, and increase e until 1 is less than e, e is less than phi(n) and gcd(e, phi(n)) is 1; then calculate d, and encrypt or decrypt.](docs/figures/thesis-figure-36.png)
 
@@ -375,20 +385,22 @@ python3 verification/check_appendix.py
 
 [`publication/README.md`](publication/README.md) adds the checks with the signed tag and with the release.
 
+`make verify` runs these checks one after another: the claim check against its expected output, the version of record against `SHA256SUMS`, the appendix check with its self-test, the check of the reading copy and the metadata check; the head of the [`Makefile`](Makefile) names each target. Besides the .NET SDK, the checks need Python 3, `pdftotext` from poppler-utils for the appendix check, poppler-utils and qpdf for the check of the reading copy, and PyYAML for the metadata check, of which CI installs version 6.0.2; for its validation of the metadata and of the licences, CI also installs cffconvert 2.0.0, pyld 2.0.4 and reuse 5.0.2.
+
 ## Limitations
 
-Of the thesis: chapter 5 describes passwordless sign-in for the partner company's customer portal (5.1) and for its online subscription form (5.2) at a high level (p. 49). The thesis implements and evaluates neither; it sets the partner company's test of FIDO hardware tokens aside (p. 49) and leaves the subscription form to a later step of the planning (p. 51). The program demonstrates the RSA and MD5 of chapter 3, not passwordless sign-in. The conclusion that the program shows these algorithms to be secure is not supported (E-022).
+Of the thesis: chapter 5 describes passwordless sign-in for the partner company's customer portal (5.1) and for its online subscription form (5.2) at a high level (p. 49). The thesis implements and evaluates neither; it sets the partner company's test of FIDO hardware tokens aside (p. 49) and leaves the subscription form to a later step of the planning (p. 51). The program demonstrates the RSA and MD5 of chapter 3, not passwordless sign-in. The conclusion that the program shows these algorithms to be secure is not supported ([E-022](ERRATA.md#e-022)).
 
 Of the program, as the appendix prints it:
 
-- **MD5 padding.** For a message whose length in bytes is 56 to 62 modulo 64, the remainder in the padding computation is negative in C#, the buffer is one block too short, and the length is written over the byte 0x80 or the end of the message, so the digest is wrong. Of the lengths from 0 to 255 bytes, 56-62, 120-126, 184-190 and 248-254 give wrong digests, the other 228 right ones; of the seven inputs of the RFC 1321 test suite, the one of 62 bytes fails ([`ERRATA.md`](ERRATA.md), E-024).
+- **MD5 padding.** For a message whose length in bytes is 56 to 62 modulo 64, the remainder in the padding computation is negative in C#, the buffer is one block too short, and the length is written over the byte 0x80 or the end of the message, so the digest is wrong. Of the lengths from 0 to 255 bytes, 56-62, 120-126, 184-190 and 248-254 give wrong digests, the other 228 right ones; of the seven inputs of the RFC 1321 test suite, the one of 62 bytes fails ([`ERRATA.md`](ERRATA.md), [E-024](ERRATA.md#e-024)).
 - **MD5 length field.** The length in bits is written as a 32-bit number into the 64-bit field, so an input of 2^29 bytes (512 MiB) or more does not get the digest of RFC 1321. This follows from the code and was not run.
 - **Text encoding.** The window encodes its fields with `Encoding.ASCII`, so every character outside ASCII, such as ä, becomes byte 63, "?", before it is hashed.
-- **RSA input.** The RSA code takes decimal integers only. Text or an empty field raises a FormatException in `Convert.ToInt32`, and a number beyond the 32-bit range an OverflowException; no handler catches them. Of the non-negative integers, those below 187 come back unchanged and larger ones come back reduced modulo 187: 200 is encrypted to 140, which is decrypted to 13. A negative integer that is not a multiple of 187 gives a negative result: -5 is encrypted to -125, which is decrypted to -5; a negative multiple of 187 gives 0. No padding is applied (E-016).
-- **RSA keys.** d comes from the closed form (1 + 2 φ(n)) / e, which gives the inverse of e modulo φ(n) for p = 11 and q = 17 but not in general: for p = 11 and q = 13 it gives e = 7 and d = 34, and 7 · 34 mod 120 = 118. P. 47 names the extended Euclidean algorithm (E-019).
-- **"Digital signature".** The thesis says that the program generates and verifies digital signatures with MD5 (p. 43). The program computes MD5 digests and compares two digest strings; it applies no key to a digest (E-017).
+- **RSA input.** The RSA code takes decimal integers only. Text or an empty field raises a FormatException in `Convert.ToInt32`, and a number beyond the 32-bit range an OverflowException; no handler catches them. Of the non-negative integers, those below 187 come back unchanged and larger ones come back reduced modulo 187: 200 is encrypted to 140, which is decrypted to 13. A negative integer that is not a multiple of 187 gives a negative result: -5 is encrypted to -125, which is decrypted to -5; a negative multiple of 187 gives 0. No padding is applied ([E-016](ERRATA.md#e-016)).
+- **RSA keys.** d comes from the closed form (1 + 2 φ(n)) / e, which gives the inverse of e modulo φ(n) for p = 11 and q = 17 but not in general: for p = 11 and q = 13 it gives e = 7 and d = 34, and 7 · 34 mod 120 = 118. P. 47 names the extended Euclidean algorithm ([E-019](ERRATA.md#e-019)).
+- **"Digital signature".** The thesis says that the program generates and verifies digital signatures with MD5 (p. 43). The program computes MD5 digests and compares two digest strings; it applies no key to a digest ([E-017](ERRATA.md#e-017)).
 
-**Figure 32.** The figure shows the plaintext "Hallo" and, in the Ciphertext field, 344 characters of the Base64 alphabet ending in "==", which decode to 256 bytes. The encryption code printed in the appendix accepts only a decimal integer and returns a decimal number below 187; for "Hallo" it raises a FormatException. The two MD5 digests in the figure are those of the printed MD5 code: d1bf93299de1b68e6d382c893bf1215f for "Hallo" and fbae09a483269207be36423cbeaf2f92 for the 344 characters, which [`verification/figure-32-ciphertext.txt`](verification/figure-32-ciphertext.txt) transcribes. How the ciphertext in the figure was produced is not known (E-015).
+**Figure 32.** The figure shows the plaintext "Hallo" and, in the Ciphertext field, 344 characters of the Base64 alphabet ending in "==", which decode to 256 bytes. The encryption code printed in the appendix accepts only a decimal integer and returns a decimal number below 187; for "Hallo" it raises a FormatException. The two MD5 digests in the figure are those of the printed MD5 code: d1bf93299de1b68e6d382c893bf1215f for "Hallo" and fbae09a483269207be36423cbeaf2f92 for the 344 characters, which [`verification/figure-32-ciphertext.txt`](verification/figure-32-ciphertext.txt) transcribes. How the ciphertext in the figure was produced is not known ([E-015](ERRATA.md#e-015)).
 
 **Not preserved.** The designer file with the layout of the main window, the three description forms (RSA, MD5 and About), the project files of 2021, the digital appendix handed out with the thesis (p. 43) and the UML files for the Violet UML Editor (p. 44). `src/Program.cs` declares the forms and controls so that the printed files compile, but does not lay them out, wire their events or declare the menus, so a build opens an empty window.
 
@@ -396,9 +408,9 @@ Of the program, as the appendix prints it:
 
 ## Corrections
 
-[`ERRATA.md`](ERRATA.md) lists the known errors of the thesis, the properties of its catalogue record and deposited file, and the web addresses of the thesis that no longer work or have moved. The deposited file does not change: a confirmed error is added to `ERRATA.md`, and an error that affects a result is reported to the library.
+[`ERRATA.md`](ERRATA.md) lists the known errors of the thesis, the properties of its catalogue record and deposited file, and the web addresses of the thesis that no longer work or have moved. The deposited file does not change: a confirmed error is added to `ERRATA.md`.
 
-This repository takes no issues. Please send a correction by e-mail to [info@mtorun0x7cd.com](mailto:info@mtorun0x7cd.com), with:
+The GitHub repository is archived and read-only: it takes no issues and no pull requests. Please send a correction by e-mail to [info@mtorun0x7cd.com](mailto:info@mtorun0x7cd.com), with:
 
 - the item: the thesis, the code, this README or the metadata;
 - the location: the page of the thesis, or the file and line;
@@ -406,6 +418,8 @@ This repository takes no issues. Please send a correction by e-mail to [info@mto
 - the proposed correction;
 - the evidence;
 - a note that you checked `ERRATA.md`.
+
+[`CONTRIBUTING.md`](CONTRIBUTING.md) gives the same route, and [`SECURITY.md`](SECURITY.md) the one for matters that should not be public.
 
 ## Citation
 
@@ -430,7 +444,13 @@ BibTeX:
 
 GitHub's "Cite this repository" reads [`CITATION.cff`](CITATION.cff) and renders the thesis as `@misc`, without its school; the entry above cites it as a Bachelor's thesis.
 
-## License
+### Citing the code
+
+`swh:1:rel:0752922c9f06de5e5314bd2dd3bd99964420f135` identifies the release `epub-3598`, the repository at the version of record, in the Software Heritage archive; the thesis is cited by its DOI above.
+
+[![Archived: release epub-3598](https://archive.softwareheritage.org/badge/swh:1:rel:0752922c9f06de5e5314bd2dd3bd99964420f135/)](https://archive.softwareheritage.org/swh:1:rel:0752922c9f06de5e5314bd2dd3bd99964420f135)
+
+## Licence
 
 | Path | Licence |
 | --- | --- |
