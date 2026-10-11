@@ -156,7 +156,9 @@ docs/figures/thesis-figure-32.png to thesis-figure-36.png
 
 slides/colloquium-handout-2021-07-05.de.pdf
   The author's copy of the handout. The matriculation number that followed
-  his name on page 1 is removed.
+  his name on page 1 is removed. Its document information names title,
+  author and subject, its catalogue the language, German, and a viewer shows
+  the title in its window; pages, text and images are unchanged.
 
 src/cMD5.cs, src/cRSA.cs, src/Raven One.cs
   The author's 2021 source files, stored with LF line endings and without a
