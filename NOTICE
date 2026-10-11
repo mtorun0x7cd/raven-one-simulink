@@ -22,7 +22,8 @@ licence of every file; the licence texts are in LICENSES/.
   src/Program.cs, build files   MIT. Written in 2026; not part of the thesis.
   (RavenOneSimuLink.csproj,     Copyright 2026 Mert Torun.
   Directory.Build.props,
-  global.json, dotfiles),
+  global.json, Makefile,
+  dotfiles),
   verification/ (scripts,
   claim check, expected
   output), .github/,
