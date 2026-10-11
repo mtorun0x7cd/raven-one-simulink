@@ -6,17 +6,35 @@
   "version": "1.1.0",
   "license": "https://spdx.org/licenses/MIT",
   "codeRepository": "https://github.com/mtorun0x7cd/raven-one-simulink",
+  "readme": "https://github.com/mtorun0x7cd/raven-one-simulink/blob/main/README.md",
+  "releaseNotes": "https://github.com/mtorun0x7cd/raven-one-simulink/blob/main/CHANGELOG.md",
+  "buildInstructions": "https://github.com/mtorun0x7cd/raven-one-simulink/blob/main/README.md#reproducing",
   "programmingLanguage": "C#",
   "runtimePlatform": ".NET 10",
   "operatingSystem": "Windows",
+  "softwareRequirements": [
+    {
+      "@type": "SoftwareApplication",
+      "name": ".NET SDK 10.0.401 or a later 10.0.4xx patch"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Python 3 with PyYAML, poppler-utils and qpdf, for the checks in verification/"
+    }
+  ],
   "developmentStatus": "https://www.repostatus.org/#inactive",
   "keywords": [
-    "cryptography",
-    "rsa",
-    "md5",
-    "csharp",
-    "winforms",
-    "bachelor-thesis"
+    "Secure",
+    "Convenient",
+    "Passwordless",
+    "Distributed",
+    "Authentication",
+    "Cryptography",
+    "RSA",
+    "MD5",
+    "C#",
+    "Windows Forms",
+    ".NET"
   ],
   "author": [
     {
