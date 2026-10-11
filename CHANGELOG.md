@@ -9,10 +9,19 @@ This repository was recreated with a new history on 2026-10-01; the earlier rele
 ### Added
 
 - `CITATION.cff` and `codemeta.json`: the Software Heritage identifier of the release `epub-3598`, the repository at the version of record, `swh:1:rel:0752922c9f06de5e5314bd2dd3bd99964420f135`.
+- `README.md`: the section Citing the code under Citation, with that identifier and the badge of the Software Heritage archive.
+- `ERRATA.md`: an index before the first entry, with the number of entries per class and one row per entry; `verification/check_metadata.py` holds it against the entries.
+- `Makefile`, with one target per local check and `make verify` for all of them.
+- `codemeta.json`: the addresses of the README, the changelog and the build instructions, and the software requirements.
 
 ### Changed
 
 - `verification/check_metadata.py` compares the version with the first released section of `CHANGELOG.md` and passes over `[Unreleased]`.
+- `README.md`: the identity line names the language of the program and its algorithms; the Contents table names every path at the root; every cited erratum links to its entry; the heading Licence is spelled as in the rest of the repository; Reproducing names `make verify` and what the checks need; two long paragraphs are split, their words unchanged; Corrections says that the repository is archived and read-only, and no longer that an error affecting a result is reported to the library.
+- `CITATION.cff` and `codemeta.json`: the keywords are the keywords the thesis prints, followed by the subject terms of the program.
+- `CONTRIBUTING.md`: the repository takes no pull requests.
+- `.gitattributes`: the checks and the hook are left out of GitHub's language statistics.
+- `slides/colloquium-handout-2021-07-05.de.pdf`: its document information gives title, author, subject and language, and opens with the title; pages and text are unchanged, and `NOTICE` declares the edit.
 
 ### Fixed
 
