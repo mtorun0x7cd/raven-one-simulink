@@ -149,7 +149,7 @@ The deposited file differs from the thesis as submitted in 2021 in that the sign
 | 7 Appendix | 53 | The source code of Raven One SimuLink: `cMD5.cs` (pp. 53-56), `cRSA.cs` (pp. 56-58) and `Raven One.cs` (pp. 58-62) |
 | 8 to 13 | 63 | List of abbreviations, list of figures, list of tables, references, statutory declaration, blocking notice |
 
-The conclusion opens: "In conclusion, we can say that offering modern authentication is a must-have for companies nowadays." Of the program it says: "The covered algorithms for cryptographic functions like RSA, AES or MAC and the Raven One SimuLink Software do indeed show on a low-level base of software, that it’s possible and secure to enable these modern algorithms." (p. 52). [`ERRATA.md`](ERRATA.md) corrects two statements of the conclusion ([E-021](ERRATA.md#e-021) and [E-022](ERRATA.md#e-022)), and [Limitations](#limitations) states what the program does and does not show.
+The conclusion opens: "In conclusion, we can say that offering modern authentication is a must-have for companies nowadays." Of the program it says: "The covered algorithms for cryptographic functions like RSA, AES or MAC and the Raven One SimuLink Software do indeed show on a low-level base of software, that it's possible and secure to enable these modern algorithms." (p. 52). [`ERRATA.md`](ERRATA.md) corrects two statements of the conclusion ([E-021](ERRATA.md#e-021) and [E-022](ERRATA.md#e-022)), and [Limitations](#limitations) states what the program does and does not show.
 
 ## Contents
 
